@@ -1,11 +1,13 @@
 git status
 git add .
-git commit -m "feat(login): add user authentication form"
-git commit -m "fix(navbar): repair broken home link"
-git commit -m "docs(readme): update setup instructions"
-git commit -m "chore(assets): upload project screenshots"
-git commit -m "style(ui): redesign dashboard cards"
+git commit -m "docs(readme): add system core features"
 git commit -m "docs(style-guide): add branch naming rules"
+git commit -m "feat(login): add user login form"
+git commit -m "feat(ui): add responsive dashboard"
+git commit -m "feat(permits): add business permit application form"
+git commit -m "fix(navbar): repair broken logout link"
+git commit -m "style(ui): redesign dashboard cards"
+git commit -m "chore(assets): upload project screenshots "
 git commit -m "refactor(auth): simplify session handling logic"
-git commit -m "test(ui): add responsive layout validation"
+git commit -m "test(forms): add validation test for empty fields "
 git push origin main
