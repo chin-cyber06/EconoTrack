@@ -1,4 +1,8 @@
 git status
 git add .
 git commit -m "feat(login): add user authentication form"
+git commit -m "fix(navbar): repair broken home link"
+git commit -m "docs(readme): update setup instructions"
+git commit -m "chore(assets): upload project screenshots"
+git commit -m "style(ui): redesign dashboard cards"
 git push origin main
