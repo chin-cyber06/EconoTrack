@@ -7,4 +7,5 @@ git commit -m "chore(assets): upload project screenshots"
 git commit -m "style(ui): redesign dashboard cards"
 git commit -m "docs(style-guide): add branch naming rules"
 git commit -m "refactor(auth): simplify session handling logic"
+git commit -m "test(ui): add responsive layout validation"
 git push origin main
