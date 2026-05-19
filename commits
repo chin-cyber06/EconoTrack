@@ -1,1 +1,4 @@
-git commit -m "type(scope): short description"
+git status
+git add .
+git commit -m "feat(login): add user authentication form"
+git push origin main
