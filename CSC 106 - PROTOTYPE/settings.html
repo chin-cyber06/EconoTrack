@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - Settings</title>
+    <link rel="stylesheet" href="settings-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo-mock">
+                <img src="butuan-logo.png" alt="Butuan Logo" class="brand-logo">
+            </div>
+            <div class="brand-text">
+                <h2>ECONOTRACK</h2>
+                <p>Business Permit & Registration System</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-house"></i> <span>Dashboard</span>
+            </a>
+            <a href="business-registration.html" class="menu-item">
+                <i class="fa-solid fa-user-plus"></i> <span>Business Registration</span>
+            </a>
+           <a href="business-permits.html" class="menu-item">
+                <i class="fa-solid fa-file-invoice"></i> <span>Business Permits</span>
+            </a>
+            <a href="permit-renewal.html" class="menu-item">
+                <i class="fa-solid fa-arrows-rotate"></i> <span>Permit Renewal</span>
+            </a>
+             <a href="search-records.html" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Search Records</span>
+            </a>
+            <a href="reports.html" class="menu-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Reports</span>
+            </a>
+            <a href="user-management.html" class="menu-item">
+                <i class="fa-solid fa-users"></i> <span>Users Management</span>
+            </a>
+            <a href="backup-recovery.html" class="menu-item">
+                <i class="fa-solid fa-cloud-arrow-up"></i> <span>Backup & Recovery</span>
+            </a>
+            <a href="settings.html" class="menu-item active">
+                <i class="fa-solid fa-gear"></i> <span>Settings</span>
+            </a>
+            <a href="help-support.html" class="menu-item">
+                <i class="fa-solid fa-circle-question"></i> <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <div class="dashboard-layout">
+        
+        <header class="top-navbar">
+            <button class="toggle-sidebar"><i class="fa-solid fa-bars"></i></button>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell notification-bell"></i>
+                <img src="wendee-profile.png" alt="User Avatar" class="profile-img">
+                <div class="profile-info">
+                    <span class="user-name">Wendee Mae...</span>
+                    <span class="user-role">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="settings-container">
+            
+            <header class="settings-header">
+                <div class="header-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </div>
+                <div class="header-text">
+                    <h1>Settings</h1>
+                    <p>Manage your account and system preferences.</p>
+                </div>
+            </header>
+
+            <div class="settings-tabs">
+                <button class="tab-btn active">
+                    <i class="fa-solid fa-user-gear"></i> Profile Settings
+                </button>
+            </div>
+
+            <div class="settings-grid">
+                
+                <section class="settings-card">
+                    <h2>Profile Information</h2>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" value="Wendee Mae B. Bacalso">
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" value="wendeemae.bacalso@butuancity.gov.ph">
+                        </div>
+                        <div class="form-group">
+                            <label>Role</label>
+                            <input type="text" value="Administrator" disabled class="disabled-input">
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Number</label>
+                            <input type="text" value="0912 345 6789">
+                        </div>
+                        <div class="form-actions text-right">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa-solid fa-user-check"></i> Update Profile
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="settings-card">
+                    <h2>Preferences</h2>
+                    <form class="settings-form">
+                        <div class="form-group">
+                            <label>Language</label>
+                            <input type="text" value="English">
+                        </div>
+                        <div class="form-group">
+                            <label>Date Format</label>
+                            <input type="text" value="MM/DD/YYYY">
+                        </div>
+                        <div class="form-group">
+                            <label>Time Format</label>
+                            <input type="text" value="12-hour (AM/PM)">
+                        </div>
+                        <div class="form-group">
+                            <label>Items per page</label>
+                            <input type="text" value="10 items">
+                        </div>
+                        <div class="form-actions text-right">
+                            <button type="submit" class="btn btn-secondary">
+                                <i class="fa-solid fa-floppy-disk"></i> Save Preferences
+                            </button>
+                        </div>
+                    </form>
+                </section>
+
+                <section class="settings-card standard-padding">
+                    <h2>Account Information</h2>
+                    <div class="info-list">
+                        <div class="info-item">
+                            <span class="info-label">Account ID</span>
+                            <span class="info-value id-code">ADM-0001</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Member Since</span>
+                            <span class="info-value">January 15, 2026</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Last Login</span>
+                            <span class="info-value text-small">May 8, 2026 &nbsp;10:24 AM</span>
+                        </div>
+                        <div class="info-item border-none">
+                            <span class="info-label">Status</span>
+                            <span class="status-badge active-badge">Active</span>
+                        </div>
+                    </div>
+                    
+                    <div class="danger-zone">
+                        <button class="btn btn-danger btn-block">
+                            <i class="fa-solid fa-trash-can"></i> Deactivate Account
+                        </button>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

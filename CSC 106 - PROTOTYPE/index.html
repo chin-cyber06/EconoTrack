@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-card">
+            
+            <div class="header-section">
+                <img src="butuan-logo.png" alt="Butuan City Logo" class="logo">
+                <div class="title-area">
+                    <h1>EconoTrack</h1>
+                    <p class="subtitle">Business Permit & Local Business<br>Registration Recording and Reporting System</p>
+                    <p class="lgu-text">LGU - Butuan City</p>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="welcome-section">
+                <h2>Welcome to EconoTrack</h2>
+                <p>Please sign in to your account</p>
+            </div>
+
+            <form class="login-form" action="dashboard.html">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-user input-icon"></i>
+                        <input type="text" id="username" placeholder="Type username" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" id="password" placeholder="Type password" required>
+                    </div>
+                </div>
+
+                <div class="form-utilities">
+                    <label class="remember-me">
+                        <input type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="btn-submit">Sign In</button>
+            </form>
+            <div class="signup-redirect" style="font-size: 13px; color: #555; text-align: center; margin-top: 15px; margin-bottom: 10px;">
+                 <p>Don't have an account? <a href="register.html" style="color: #4672a9; text-decoration: none; font-weight: 600;">Sign up</a></p>
+            </div>
+            <footer class="card-footer">
+                <p>&copy; 2026 LGU Butuan City. All rights reserved.</p>
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+</html>

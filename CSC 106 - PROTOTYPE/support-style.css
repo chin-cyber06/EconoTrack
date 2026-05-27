@@ -1,0 +1,455 @@
+/* ========================================================================
+   1. GLOBAL RESET & BASE LAYOUT
+======================================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #ededed;
+    display: flex;
+    min-height: 100vh;
+    color: #1f2937;
+}
+
+/* ========================================================================
+   2. SIDEBAR
+======================================================================== */
+
+.sidebar {
+    width: 260px;
+    background-color: #e2e4e7;
+    border-right: 1px solid #d1d5db;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.sidebar-brand {
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.brand-text h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: 0.5px;
+}
+
+.brand-text p {
+    font-size: 9px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.sidebar-menu {
+    padding: 15px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    color: #71717a;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.menu-item i {
+    width: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.menu-item:hover {
+    background-color: #d4d4d8;
+    color: #18181b;
+}
+
+.menu-item.active {
+    background-color: #4672a9;
+    color: white;
+}
+
+.sidebar-footer {
+    padding: 15px 12px;
+    border-top: 1px solid #d1d5db;
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 600;
+}
+
+/* ========================================================================
+   3. MAIN DASHBOARD LAYOUT
+======================================================================== */
+
+.dashboard-layout {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================================================
+   4. TOP NAVBAR
+======================================================================== */
+
+.top-navbar {
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.toggle-sidebar {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #1f2937;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.notification-bell {
+    font-size: 20px;
+    color: #1f2937;
+    cursor: pointer;
+}
+
+.profile-img {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.user-role {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+/* ========================================================================
+   5. MAIN CONTENT CONTAINER
+======================================================================== */
+
+.support-container {
+    padding: 0 32px 32px 32px;
+    width: 100%;
+}
+
+/* ========================================================================
+   6. PAGE HEADER
+======================================================================== */
+
+.support-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+}
+
+.header-icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background-color: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-icon-circle i {
+    font-size: 24px;
+    color: #3b5a84;
+}
+
+.header-text h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.2;
+}
+
+.header-text p {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+/* ========================================================================
+   7. TABS
+======================================================================== */
+
+.support-tabs {
+    border-bottom: 1px solid #d1d5db;
+    margin-bottom: 24px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 12px 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: #4672a9;
+    border-bottom: 3px solid #4672a9;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ========================================================================
+   8. SUPPORT GRID
+======================================================================== */
+
+.support-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+/* ========================================================================
+   9. SUPPORT CARDS
+======================================================================== */
+
+.support-card {
+    background-color: #fcfcfc;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.support-card h2 {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #3b5a84;
+    margin-bottom: 20px;
+}
+
+/* ========================================================================
+   10. FAQ ACCORDION
+======================================================================== */
+
+.accordion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.accordion-item {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.accordion-trigger {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    text-align: left;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    transition: background-color 0.2s ease;
+}
+
+.accordion-trigger:hover {
+    background-color: #f8fafc;
+}
+
+.accordion-trigger i {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+/* ========================================================================
+   11. CONTACT SUPPORT SECTION
+======================================================================== */
+
+.contact-subtext {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.6;
+    margin-top: -8px;
+    margin-bottom: 20px;
+}
+
+.contact-channels {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.channel-row {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: 0.2s ease;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+
+.channel-row:hover {
+    background-color: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.channel-row.no-pointer {
+    cursor: default;
+}
+
+.channel-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background-color: #f1f5f9;
+    color: #4672a9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.channel-details {
+    flex: 1;
+}
+
+.channel-details h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.channel-details p {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.channel-arrow {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.channel-arrow.invisible {
+    opacity: 0;
+}
+
+/* ========================================================================
+   12. BUTTON
+======================================================================== */
+
+.ticket-action-box {
+    margin-top: 22px;
+}
+
+.btn-ticket-submit {
+    width: 100%;
+    height: 42px;
+    background-color: #4672a9;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-ticket-submit:hover {
+    background-color: #355887;
+}
+
+/* ========================================================================
+   13. RESPONSIVE
+======================================================================== */
+
+@media (max-width: 1024px) {
+
+    .support-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .sidebar {
+        display: none;
+    }
+
+    .dashboard-layout {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .support-container {
+        padding: 0 18px 24px 18px;
+    }
+
+    .top-navbar {
+        padding: 0 18px;
+    }
+}

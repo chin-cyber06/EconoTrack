@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - Backup & Recovery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="backup-style.css">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo-mock">
+                <img src="butuan-logo.png" alt="Butuan Logo" class="brand-logo">
+            </div>
+            <div class="brand-text">
+                <h2>ECONOTRACK</h2>
+                <p>Business Permit & Registration System</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-house"></i> <span>Dashboard</span>
+            </a>
+            <a href="business-registration.html" class="menu-item">
+                <i class="fa-solid fa-user-plus"></i> <span>Business Registration</span>
+            </a>
+           <a href="business-permits.html" class="menu-item">
+                <i class="fa-solid fa-file-invoice"></i> <span>Business Permits</span>
+            </a>
+            <a href="permit-renewal.html" class="menu-item">
+                <i class="fa-solid fa-arrows-rotate"></i> <span>Permit Renewal</span>
+            </a>
+             <a href="search-records.html" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Search Records</span>
+            </a>
+            <a href="reports.html" class="menu-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Reports</span>
+            </a>
+            <a href="user-management.html" class="menu-item">
+                <i class="fa-solid fa-users"></i> <span>Users Management</span>
+            </a>
+            <a href="backup-recovery.html" class="menu-item active">
+                <i class="fa-solid fa-cloud-arrow-up"></i> <span>Backup & Recovery</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i> <span>Settings</span>
+            </a>
+            <a href="help-support.html" class="menu-item">
+                <i class="fa-solid fa-circle-question"></i> <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="top-navbar">
+            <button class="toggle-sidebar"><i class="fa-solid fa-bars"></i></button>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell notification-bell"></i>
+                <img src="ermi-profile.png" alt="User Avatar" class="profile-img">
+                <div class="profile-info">
+                    <span class="user-name">Ermi Shayne...</span>
+                    <span class="user-role">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-container">
+            
+            <div class="module-header-row">
+                <div class="title-block">
+                    <h1><i class="fa-solid fa-cloud-arrow-up header-icon"></i> Backup & Recovery</h1>
+                    <p class="breadcrumbs">Dashboard > Backup and Recovery</p>
+                </div>
+                
+                <div class="top-status-cards-container">
+                    <div class="status-summary-card">
+                        <div class="status-card-icon-wrapper green-text">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <div class="status-card-info">
+                            <div class="status-label-row">
+                                <span class="status-title">LAST BACKUP</span>
+                                <span class="badge-status success-bg">Successful</span>
+                            </div>
+                            <span class="status-timestamp">April 29, 2026 10:15AM</span>
+                            <span class="status-subtext">Full Backup - Local Server</span>
+                        </div>
+                    </div>
+
+                    <div class="status-summary-card">
+                        <div class="status-card-icon-wrapper blue-text">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+                        <div class="status-card-info">
+                            <div class="status-label-row">
+                                <span class="status-title">NEXT SCHEDULE BACKUP</span>
+                            </div>
+                            <span class="status-timestamp">May 30, 2026 03:15PM</span>
+                            <span class="status-subtext-scheduled">Daily Backup <span class="badge-scheduled">Scheduled</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="backup-grid-row">
+                
+                <section class="backup-form-card">
+                    <h2>CREATE NEW BACKUP</h2>
+                    
+                    <form onsubmit="event.preventDefault();">
+                        <div class="form-group-control">
+                            <label>Backup Type</label>
+                            <div class="select-dropdown-wrapper">
+                                <select>
+                                    <option value="" disabled selected hidden>Select Backup Type</option>
+                                    <option value="full">Full Backup</option>
+                                    <option value="incremental">Incremental Backup</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group-control">
+                            <label>Date Range <span class="label-optional">(Optional)</span></label>
+                            <div class="date-range-inputs">
+                                <div class="date-field">
+                                    <span>From:</span>
+                                    <input type="date">
+                                </div>
+                                <div class="date-field">
+                                    <span>To:</span>
+                                    <input type="date">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group-control">
+                            <label>Include in Backup</label>
+                            <div class="checkbox-options-list">
+                                <label class="checkbox-custom-item">
+                                    <input type="checkbox" checked>
+                                    <span>Business Records</span>
+                                </label>
+                                <label class="checkbox-custom-item">
+                                    <input type="checkbox" checked>
+                                    <span>Permit Records</span>
+                                </label>
+                                <label class="checkbox-custom-item">
+                                    <input type="checkbox" checked>
+                                    <span>User Accounts</span>
+                                </label>
+                                <label class="checkbox-custom-item">
+                                    <input type="checkbox">
+                                    <span>System Settings</span>
+                                </label>
+                                <label class="checkbox-custom-item">
+                                    <input type="checkbox" checked>
+                                    <span>Attachments and Documents</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group-control">
+                            <label>Storage Location</label>
+                            <div class="radio-options-list">
+                                <label class="radio-custom-item">
+                                    <input type="radio" name="storage_location" checked>
+                                    <span class="radio-text-wrapper">
+                                        <strong>Local Server</strong> <span class="text-muted">(Recommended)</span>
+                                    </span>
+                                </label>
+                                <label class="radio-custom-item">
+                                    <input type="radio" name="storage_location">
+                                    <span>Cloud Storage</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-generate-backup">
+                            <i class="fa-solid fa-cloud-arrow-up"></i> GENERATE BACKUP
+                        </button>
+                    </form>
+                </section>
+
+                <section class="backup-history-card">
+                    <div class="card-header-actions-bar">
+                        <div class="card-title-container">
+                            <i class="fa-solid fa-folder-open section-header-icon"></i>
+                            <h2>BACKUP HISTORY</h2>
+                        </div>
+                        <div class="card-search-input-wrapper">
+                            <input type="text" placeholder="Search backup...">
+                            <i class="fa-solid fa-magnifying-glass search-bar-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="responsive-table-scroller">
+                        <table class="backup-system-table">
+                            <thead>
+                                <tr>
+                                    <th>DATE & TIME</th>
+                                    <th>BACKUP TYPE</th>
+                                    <th>STORAGE</th>
+                                    <th>DATE RANGE</th>
+                                    <th>STATUS</th>
+                                    <th>SIZE</th>
+                                    <th class="text-center">ACTIONS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-semibold text-dark">April 29, 2026 <span class="table-time-text">10:15 PM</span></td>
+                                    <td><span class="pill-badge type-blue">Full Backup</span></td>
+                                    <td><i class="fa-solid fa-server table-inline-icon"></i> Local Server</td>
+                                    <td class="text-muted">All Data</td>
+                                    <td><span class="pill-badge status-success">Completed</span></td>
+                                    <td class="font-medium">512.4 MB</td>
+                                    <td>
+                                        <div class="table-actions-cluster">
+                                            <button class="action-icon-btn" title="View Details"><i class="fa-regular fa-eye"></i></button>
+                                            <button class="action-icon-btn" title="Download"><i class="fa-solid fa-download"></i></button>
+                                            <button class="action-icon-btn text-muted"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold text-dark">April 27, 2026 <span class="table-time-text">01:29 PM</span></td>
+                                    <td><span class="pill-badge type-green">Incremental</span></td>
+                                    <td><i class="fa-solid fa-server table-inline-icon"></i> Local Server</td>
+                                    <td class="text-dark font-medium">April 26 - 27, 2026</td>
+                                    <td><span class="pill-badge status-success">Completed</span></td>
+                                    <td class="font-medium">108.7 MB</td>
+                                    <td>
+                                        <div class="table-actions-cluster">
+                                            <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                            <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                            <button class="action-icon-btn text-muted"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold text-dark">April 02, 2026 <span class="table-time-text">09:52 AM</span></td>
+                                    <td><span class="pill-badge type-blue">Full Backup</span></td>
+                                    <td><i class="fa-solid fa-server table-inline-icon"></i> Local Server</td>
+                                    <td class="text-muted">All Data</td>
+                                    <td><span class="pill-badge status-success">Completed</span></td>
+                                    <td class="font-medium">498.2 MB</td>
+                                    <td>
+                                        <div class="table-actions-cluster">
+                                            <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                            <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                            <button class="action-icon-btn text-muted"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold text-dark">March 25, 2026 <span class="table-time-text">02:37 PM</span></td>
+                                    <td><span class="pill-badge type-green">Incremental</span></td>
+                                    <td><i class="fa-solid fa-cloud table-inline-icon"></i> Cloud Storage</td>
+                                    <td class="text-dark font-medium">March 24 - 25, 2026</td>
+                                    <td><span class="pill-badge status-success">Completed</span></td>
+                                    <td class="font-medium">115.3 MB</td>
+                                    <td>
+                                        <div class="table-actions-cluster">
+                                            <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                            <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                            <button class="action-icon-btn text-muted"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-semibold text-dark">March 03, 2026 <span class="table-time-text">04:22 PM</span></td>
+                                    <td><span class="pill-badge type-blue">Full Backup</span></td>
+                                    <td><i class="fa-solid fa-cloud table-inline-icon"></i> Cloud Storage</td>
+                                    <td class="text-muted">All Data</td>
+                                    <td><span class="pill-badge status-failed">Failed</span></td>
+                                    <td class="font-medium">0 MB</td>
+                                    <td>
+                                        <div class="table-actions-cluster">
+                                            <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                            <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                            <button class="action-icon-btn text-muted"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-mini-pagination-footer">
+                        <span class="pagination-count-label">Showing 1 to 5 of 15 entries</span>
+                        <div class="pagination-action-pills">
+                            <button class="p-arrow"><i class="fa-solid fa-chevron-left"></i></button>
+                            <button class="p-num active">1</button>
+                            <button class="p-num">2</button>
+                            <button class="p-num">3</button>
+                            <button class="p-num">4</button>
+                            <button class="p-num">5</button>
+                            <button class="p-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <section class="deleted-records-card">
+                <div class="deleted-card-header">
+                    <div class="deleted-header-title-block">
+                        <h2>Recently Deleted Records</h2>
+                        <p>List of recently deleted records that can be restored.</p>
+                    </div>
+                    <a href="#" class="view-all-link">View All Deleted Records &gt;</a>
+                </div>
+
+                <div class="responsive-table-scroller">
+                    <table class="deleted-records-table">
+                        <thead>
+                            <tr>
+                                <th>DATE DELETED</th>
+                                <th>MODULE</th>
+                                <th>RECORD DETAILS</th>
+                                <th>DELETED BY</th>
+                                <th class="text-center">ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-medium text-dark">April 23, 2026 <span class="table-time-text">09:30 AM</span></td>
+                                <td class="font-semibold text-dark">Business</td>
+                                <td class="font-medium"><strong class="highlight-record-title">Crossfire Print Shop</strong> <span class="text-muted text-separator">-</span> <span class="text-muted text-spaced-id">BP-2026-00123</span></td>
+                                <td class="font-semibold text-dark">Ermi Shayne P. Cagadas</td>
+                                <td>
+                                    <div class="deleted-actions-wrapper">
+                                        <button class="btn-restore-action"><i class="fa-solid fa-rotate-left"></i> Restore</button>
+                                        <button class="btn-trash-permanent"><i class="fa-solid fa-trash-can"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium text-dark">April 11, 2026 <span class="table-time-text">01:15 PM</span></td>
+                                <td class="font-semibold text-dark">Permit</td>
+                                <td class="font-medium"><strong class="highlight-record-title">Bright Solutions Inc.</strong> <span class="text-muted text-separator">-</span> <span class="text-muted text-spaced-id">BP-2026-00121</span></td>
+                                <td class="font-semibold text-dark">Admin User</td>
+                                <td>
+                                    <div class="deleted-actions-wrapper">
+                                        <button class="btn-restore-action"><i class="fa-solid fa-rotate-left"></i> Restore</button>
+                                        <button class="btn-trash-permanent"><i class="fa-solid fa-trash-can"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-medium text-dark">April 03, 2026 <span class="table-time-text">11:27 AM</span></td>
+                                <td class="font-semibold text-dark">Business</td>
+                                <td class="font-medium"><strong class="highlight-record-title">Cafe Atreza</strong> <span class="text-muted text-separator">-</span> <span class="text-muted text-spaced-id">BP-2026-00126</span></td>
+                                <td class="font-semibold text-dark">Admin User</td>
+                                <td>
+                                    <div class="deleted-actions-wrapper">
+                                        <button class="btn-restore-action"><i class="fa-solid fa-rotate-left"></i> Restore</button>
+                                        <button class="btn-trash-permanent"><i class="fa-solid fa-trash-can"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div id="backupSuccessModal" class="dashboard-overlay" style="display: none;">
+        <div class="modal-backdrop">
+            <div class="modal-box">
+                <div class="icon-circle">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+                <h2 class="modal-title">Backup Generated <span class="highlight-text">successfully!</span></h2>
+                <p class="modal-message">The system data has been backed up.</p>
+                <button id="closeModalBtn" class="modal-btn">Done</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Get elements
+        const generateBtn = document.querySelector('.btn-generate-backup');
+        const modal = document.getElementById('backupSuccessModal');
+        const doneBtn = document.getElementById('closeModalBtn');
+
+        // Show modal when clicking "Generate Backup"
+        if (generateBtn && modal) {
+            generateBtn.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevents form from reloading page
+                modal.style.display = 'flex';
+            });
+        }
+
+        // Hide modal when clicking "Done"
+        if (doneBtn && modal) {
+            doneBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>

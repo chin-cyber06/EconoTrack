@@ -1,0 +1,510 @@
+/* ==========================================================================
+   1. CORE GLOBAL STYLING & CLEAN RESET RULES (Dashboard Match)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f3f4f6; /* Dashboard exact canvas gray background color fill */
+    display: flex;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* ==========================================================================
+   2. UNIFIED SIDEBAR NAVIGATION MENU (Dashboard Match)
+   ========================================================================== */
+.sidebar {
+    width: 260px; /* Exact uniform width matching dashboard spacing */
+    background-color: #ffffff;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.sidebar-brand {
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.brand-logo {
+    width: 45px;
+    height: auto;
+}
+
+.brand-text h2 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e3a8a; /* Deep blue branding header tone */
+    letter-spacing: 0.5px;
+}
+
+.brand-text p {
+    font-size: 9px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.sidebar-menu {
+    padding: 15px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    color: #6b7280;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.menu-item i {
+    width: 18px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.menu-item:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+.menu-item.active {
+    background-color: #4672a9; /* Soft blue selection indicator token */
+    color: white;
+}
+
+.sidebar-footer {
+    padding: 15px 10px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    color: #dc2626;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. MAIN WORKSPACE VIEWPORT LAYER SETUP (Dashboard Match)
+   ========================================================================== */
+.main-content {
+    margin-left: 260px; /* Symmetrical margin alignment to clear the fixed sidebar */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+/* TOP TOOLBAR NAV BAR SYSTEM */
+.top-navbar {
+    height: 60px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 24px;
+}
+
+.toggle-sidebar-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #4b5563;
+    cursor: pointer;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-icon-btn {
+    position: relative;
+    font-size: 20px;
+    color: #4b5563;
+    cursor: pointer;
+}
+
+.notification-badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    background-color: #ef4444;
+    border-radius: 50%;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111827;
+}
+
+.user-role {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+/* ==========================================================================
+   4. BUSINESS PERMITS WORKSPACE MODULE ELEMENTS
+   ========================================================================== */
+.content-container {
+    padding: 24px;
+    overflow-y: auto;
+}
+
+.module-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.title-section h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e3a8a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.title-icon {
+    font-size: 18px;
+}
+
+.breadcrumbs {
+    font-size: 11px;
+    color: #6b7280;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* Primary Action Accent Configuration Button Style rules */
+.btn-primary-action {
+    background-color: #4672a9;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary-action:hover {
+    background-color: #355887;
+}
+
+/* Main Isolated Central Business Registry Data Card Layout block */
+.data-management-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   5. PERMIT FILTER TABS INTERFACE
+   ========================================================================== */
+.filter-tabs-row {
+    display: flex;
+    border-bottom: 1px solid #e5e7eb;
+    background-color: #ffffff;
+    padding: 0 8px;
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    padding: 14px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #6b7280;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.tab-btn:hover {
+    color: #111827;
+}
+
+.tab-btn.active {
+    color: #4672a9; /* Activates matching blue brand element indicator */
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 3px;
+    background-color: #4672a9;
+    border-radius: 2px;
+}
+
+.badge-count {
+    font-size: 11px;
+    color: #9ca3af;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   6. SEARCH AND SUB-UTILITY ROW CONTROLS
+   ========================================================================== */
+.utility-controls-row {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.search-input-wrapper {
+    position: relative;
+    width: 260px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    color: #9ca3af;
+}
+
+.search-field {
+    width: 100%;
+    padding: 7px 12px 7px 32px;
+    font-size: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    outline: none;
+    background-color: #f9fafb;
+    transition: border-color 0.2s;
+}
+
+.search-field:focus {
+    border-color: #4672a9;
+}
+
+.btn-secondary-filter {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #4b5563;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-secondary-filter:hover {
+    background-color: #f3f4f6;
+}
+
+/* ==========================================================================
+   7. MAIN REGISTRY WORKSPACE COMPONENT DATA TABLE
+   ========================================================================== */
+.table-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.permits-registry-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 12px; /* Matches uniform dashboard layout scale */
+}
+
+.permits-registry-table th {
+    background-color: #f9fafb; /* Symmetrical background grid strip token */
+    padding: 12px 16px;
+    font-weight: 600;
+    color: #4b5563;
+    border-bottom: 1px solid #e5e7eb;
+    text-transform: none; /* Keeps casing consistent with your dashboard text */
+    letter-spacing: normal;
+}
+
+.permits-registry-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f3f4f6;
+    color: #4b5563;
+}
+
+.permits-registry-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.font-semibold {
+    font-weight: 600;
+    color: #111827;
+}
+
+/* ==========================================================================
+   8. SYSTEM STATUS REGISTRATION BADGES SYSTEM
+   ========================================================================== */
+.status-badge {
+    padding: 2px 10px;
+    border-radius: 12px; /* Smooth rounded pill matching your system standard */
+    font-size: 11px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.status-badge.approved {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-badge.pending {
+    background-color: #fff7ed;
+    color: #c2410c;
+}
+
+.status-badge.expired {
+    background-color: #fef2f2;
+    color: #b91c1c;
+}
+
+/* Action Rows Column Alignments */
+.text-center { text-align: center; }
+
+.action-btn-cluster {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.action-icon-btn {
+    background: none;
+    border: none;
+    color: #9ca3af;
+    cursor: pointer;
+    font-size: 14px;
+    transition: color 0.15s;
+}
+
+.action-icon-btn:hover {
+    color: #4672a9;
+}
+
+/* ==========================================================================
+   9. DATA ENTRY CONTROL PAGINATION FOOTER
+   ========================================================================== */
+.table-pagination-footer {
+    padding: 14px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border-top: 1px solid #e5e7eb;
+}
+
+.pagination-counter-label {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.pagination-action-cluster-row {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.pagination-arrow-btn, .pagination-num-btn {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #4b5563;
+    cursor: pointer;
+}
+
+.pagination-arrow-btn:hover, .pagination-num-btn:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+.pagination-num-btn.active {
+    background-color: #4672a9;
+    color: #ffffff;
+    border-color: #4672a9;
+}
+
+/* ==========================================================================
+   10. MEDIA QUERIES RESPONSIVENESS
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .sidebar { display: none; }
+    .main-content { margin-left: 0; }
+}

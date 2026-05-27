@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - New Permit Application (Step 4)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="business-review-style.css">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo-mock">
+                <img src="butuan-logo.png" alt="Butuan Logo" class="brand-logo">
+            </div>
+            <div class="brand-text">
+                <h2>ECONOTRACK</h2>
+                <p>Business Permit & Registration System</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-house"></i> <span>Dashboard</span>
+            </a>
+            <a href="business-registration.html" class="menu-item">
+                <i class="fa-solid fa-user-plus"></i> <span>Business Registration</span>
+            </a>
+            <a href="business-permits.html" class="menu-item active">
+                <i class="fa-solid fa-file-invoice"></i> <span>Business Permits</span>
+            </a>
+            <a href="permit-renewal.html" class="menu-item">
+                <i class="fa-solid fa-arrows-rotate"></i> <span>Permit Renewal</span>
+            </a>
+             <a href="search-records.html" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Search Records</span>
+            </a>
+            <a href="reports.html" class="menu-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Reports</span>
+            </a>
+            <a href="user-management.html" class="menu-item">
+                <i class="fa-solid fa-users"></i> <span>Users Management</span>
+            </a>
+            <a href="backup-recovery.html" class="menu-item">
+                <i class="fa-solid fa-database"></i> <span>Backup & Recovery</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i> <span>Settings</span>
+            </a>
+            <a href="help-support.html" class="menu-item">
+                <i class="fa-solid fa-circle-question"></i> <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="top-navbar">
+            <button class="toggle-sidebar"><i class="fa-solid fa-bars"></i></button>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell notification-bell"></i>
+                <img src="claire-profile.png" alt="User Avatar" class="profile-img">
+                <div class="profile-info">
+                    <span class="user-name">Christine M...</span>
+                    <span class="user-role">LGU Staff</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-container">
+            
+            <div class="module-header-row">
+                <div class="title-block">
+                    <h1><i class="fa-solid fa-file-invoice header-icon"></i> Business Permits</h1>
+                    <p class="breadcrumbs">Dashboard > Business Permits > New Permit Application</p>
+                </div>
+            </div>
+
+            <div class="data-management-card wizard-card">
+                
+                <div class="wizard-progress-tracker">
+                    <div class="step-item completed">
+                        <span class="step-num"><i class="fa-solid fa-check"></i></span>
+                        <span class="step-label">Permit Information</span>
+                    </div>
+                    <div class="step-item completed">
+                        <span class="step-num"><i class="fa-solid fa-check"></i></span>
+                        <span class="step-label">Business Details</span>
+                    </div>
+                    <div class="step-item completed">
+                        <span class="step-num"><i class="fa-solid fa-check"></i></span>
+                        <span class="step-label">Requirements</span>
+                    </div>
+                    <div class="step-item active">
+                        <span class="step-num">4</span>
+                        <span class="step-label">Review & Submit</span>
+                    </div>
+                </div>
+
+                <div class="info-alert-banner">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div class="alert-text">
+                        <h3>Step 4 of 4: Review & Submit</h3>
+                        <p>Provide the basic details of your permit application. Fields marked with <span class="required-star">*</span> are required.</p>
+                    </div>
+                </div>
+
+                <form class="permit-application-form" action="submit-success.html" method="POST">
+                    
+                    <div class="review-layout-grid">
+                        
+                        <div class="review-left-column">
+                            
+                            <div class="review-section-card">
+                                <div class="section-card-header">
+                                    <span class="section-card-title">Section 1: Permit Information</span>
+                                    <button type="button" class="btn-edit-step" onclick="window.location.href='permit-info.html'">Edit</button>
+                                </div>
+                                <div class="section-card-body">
+                                    <table class="review-data-table">
+                                        <tr>
+                                            <td class="data-label">Business Name</td>
+                                            <td class="data-separator">:</td>
+                                            <td class="data-value">Juan Dela Cruz General Merchandise</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Purpose of Application</td>
+                                            <td class="data-separator">:</td>
+                                            <td class="data-value">New Business Application</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Permit Type</td>
+                                            <td class="data-separator">:</td>
+                                            <td class="data-value">Mayor's Permit</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Permit Duration</td>
+                                            <td class="data-separator">:</td>
+                                            <td class="data-value">1 year</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Application Date</td>
+                                            <td class="data-separator">:</td>
+                                            <td class="data-value">May 20, 2026</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Expiry Date</td>
+                                            <td class="data-separator">:</td>
+                                            <td class="data-value">May 20, 2027</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="review-section-card">
+                                <div class="section-card-header">
+                                    <span class="section-card-title">Section 2: Business Details</span>
+                                    <button type="button" class="btn-edit-step" onclick="window.location.href='business-details.html'">Edit</button>
+                                </div>
+                                <div class="section-card-body">
+                                    <h4 class="sub-section-title">Business Information</h4>
+                                    <table class="review-data-table">
+                                        <tr>
+                                            <td class="data-label">Business Trade Name (DBA)</td>
+                                            <td class="data-separator">:</td>
+                                            <td class="data-value">Dela Cruz GenMerch</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Business Registration No.</td>
+                                            <td class="data-separator">:</td>
+                                            <td class="data-value">BRS-2026-00051247</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Nature of Business</td>
+                                            <td class="data-separator">:</td>
+                                            <td class="data-value">Retail Trade</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Business Category</td>
+                                            <td class="data-separator">:</td>
+                                            <td class="data-value">Small</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="data-label">Registration Date</td>
+                                            <td class="data-separator">:</td>
+                                            <td class="data-value">May 20, 2026</td>
+                                        </tr>
+                                    </table>
+
+                                    <h4 class="sub-section-title">Business Address</h4>
+                                    <table class="review-data-table">
+                                        <tr>
+                                            <td class="data-label">Address</td>
+                                            <td class="data-separator">:</td>
+                                            <td class="data-value">P-6A, Ampayon, Butuan City, Agusan del Norte, 8600</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="review-right-column">
+                            
+                            <div class="review-section-card">
+                                <div class="section-card-header">
+                                    <span class="section-card-title">Section 3: Requirements</span>
+                                    <button type="button" class="btn-edit-step" onclick="window.location.href='business-requirements.html'">Edit</button>
+                                </div>
+                                <div class="section-card-body">
+                                    <ul class="requirements-review-list">
+                                        <li>
+                                            <span class="req-item-text">1. Barangay Clearance:</span>
+                                            <button type="button" class="btn-replace-file">Replace</button>
+                                        </li>
+                                        <li>
+                                            <span class="req-item-text">2. DTI/SEC Registration:</span>
+                                            <button type="button" class="btn-replace-file">Replace</button>
+                                        </li>
+                                        <li>
+                                            <span class="req-item-text">3. BIR Certificate:</span>
+                                            <button type="button" class="btn-replace-file">Replace</button>
+                                        </li>
+                                        <li>
+                                            <span class="req-item-text">4. Lease contract:</span>
+                                            <button type="button" class="btn-replace-file">Replace</button>
+                                        </li>
+                                        <li>
+                                            <span class="req-item-text">5. Occupancy Permit:</span>
+                                            <button type="button" class="btn-replace-file">Replace</button>
+                                        </li>
+                                        <li>
+                                            <span class="req-item-text">6. Fire Safety Inspection Certificate:</span>
+                                            <button type="button" class="btn-replace-file">Replace</button>
+                                        </li>
+                                        <li>
+                                            <span class="req-item-text">7. Sanitary Permit:</span>
+                                            <button type="button" class="btn-replace-file">Replace</button>
+                                        </li>
+                                        <li>
+                                            <span class="req-item-text">8. Cedula:</span>
+                                            <button type="button" class="btn-replace-file">Replace</button>
+                                        </li>
+                                        <li>
+                                            <span class="req-item-text">9. Valid IDs:</span>
+                                            <button type="button" class="btn-replace-file">Replace</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="submission-reminder-box">
+                                <div class="reminder-header">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                    <span>Reminder</span>
+                                </div>
+                                <ul class="reminder-bullet-points">
+                                    <li>Please make sure all information is accurate and complete.</li>
+                                    <li>Submitted applications cannot be edited.</li>
+                                    <li>You will receive a notification once your application has been reviewed.</li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="wizard-actions-row">
+                        <span class="required-notice-footer"><span class="required-star">*</span> Required fields</span>
+                        <div class="action-btn-group">
+                            <button type="button" class="btn-cancel-action" onclick="window.location.href='business-requirements.html'">Previous</button>
+                            <button type="submit" class="btn-submit-action">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </main>
+    <div class="modal-popup-backdrop" id="successModal">
+        <div class="success-modal-card">
+            <div class="checkmark-circle-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h1 class="success-title">Permit Application Submitted</h1>
+            <h2 class="success-subtitle">successfully!</h2>
+            <p class="success-description">The application has been received and is now under evaluation.</p>
+            <button type="button" class="btn-modal-done" onclick="window.location.href='business-permits.html'">Done</button>
+        </div>
+    </div>
+
+    <script>
+        // intercept the submit action to instantly reveal the modal graphic interface
+        const applicationForm = document.querySelector('.permit-application-form');
+        const targetModal = document.getElementById('successModal');
+        
+        applicationForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents instant page reloading
+            targetModal.classList.add('reveal-active');
+        });
+    </script>
+</body>
+</html>

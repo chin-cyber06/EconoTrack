@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - Reports Export</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reports-style.css">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="form-style.css">
+
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo-mock">
+                <img src="butuan-logo.png" alt="Butuan Logo" class="brand-logo">
+            </div>
+            <div class="brand-text">
+                <h2>ECONOTRACK</h2>
+                <p>Business Permit & Registration System</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-house"></i> <span>Dashboard</span>
+            </a>
+            <a href="business-registration.html" class="menu-item">
+                <i class="fa-solid fa-user-plus"></i> <span>Business Registration</span>
+            </a>
+           <a href="business-permits.html" class="menu-item">
+                <i class="fa-solid fa-file-invoice"></i> <span>Business Permits</span>
+            </a>
+            <a href="permit-renewal.html" class="menu-item">
+                <i class="fa-solid fa-arrows-rotate"></i> <span>Permit Renewal</span>
+            </a>
+             <a href="search-records.html" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Search Records</span>
+            </a>
+            <a href="reports.html" class="menu-item active">
+                <i class="fa-solid fa-chart-simple"></i> <span>Reports</span>
+            </a>
+            <a href="user-management.html" class="menu-item">
+                <i class="fa-solid fa-users"></i> <span>Users Management</span>
+            </a>
+            <a href="backup-recovery.html" class="menu-item">
+                <i class="fa-solid fa-database"></i> <span>Backup & Recovery</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i> <span>Settings</span>
+            </a>
+            <a href="help-support.html" class="menu-item">
+                <i class="fa-solid fa-circle-question"></i> <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="top-navbar">
+            <button class="toggle-sidebar"><i class="fa-solid fa-bars"></i></button>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell notification-bell"></i>
+                <img src="shayna-profile.png" alt="User Avatar" class="profile-img">
+                <div class="profile-info">
+                    <span class="user-name">Shayne Cafe</span>
+                    <span class="user-role">LGU Staff</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-container">
+            
+            <div class="module-header-row">
+                <div class="title-block">
+                    <h1><i class="fa-solid fa-chart-simple header-icon"></i> Reports</h1>
+                    <p class="breadcrumbs">Dashboard > Reports</p>
+                </div>
+            </div>
+
+            <section class="reports-filter-bar">
+                <div class="filter-controls-group">
+                    <div class="filter-control">
+                        <label>Report Type</label>
+                        <select>
+                            <option>Monthly Report</option>
+                            <option>Quarterly Report</option>
+                            <option>Annual Report</option>
+                        </select>
+                    </div>
+                    <div class="filter-control">
+                        <label>Year</label>
+                        <select>
+                            <option>2026</option>
+                            <option>2025</option>
+                            <option>2024</option>
+                        </select>
+                    </div>
+                    <div class="filter-control">
+                        <label>Month</label>
+                        <select>
+                            <option>May</option>
+                            <option>April</option>
+                            <option>March</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn-generate-report" id="openModalBtn">
+                    <i class="fa-solid fa-arrow-up-from-bracket icon-rotate"></i> Generate Report
+                </button>
+            </section>
+
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <span class="metric-title">Total Businesses</span>
+                    <span class="metric-value">2,458</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-title">New Registrations</span>
+                    <span class="metric-value">2,458</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-title">Total Permit Issued</span>
+                    <span class="metric-value">2,458</span>
+                </div>
+                <div class="metric-card">
+                    <span class="metric-title">Total Revenue</span>
+                    <span class="metric-value">₱1,245,680.00</span>
+                </div>
+            </section>
+
+            <section class="charts-container-grid">
+                <div class="chart-card">
+                    <h3 class="chart-card-title">Business Registration Trend</h3>
+                    <div class="bar-chart-wrapper">
+                        <div class="y-axis-labels">
+                            <span>200</span><span>150</span><span>100</span><span>50</span><span>0</span>
+                        </div>
+                        <div class="bar-chart-graph">
+                            <div class="grid-lines-background">
+                                <div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div>
+                            </div>
+                            <div class="bars-data-container">
+                                <div class="bar-column"><div class="bar-fill" style="height: 60%;"></div><span>Jan</span></div>
+                                <div class="bar-column"><div class="bar-fill" style="height: 76%;"></div><span>Feb</span></div>
+                                <div class="bar-column"><div class="bar-fill" style="height: 62%;"></div><span>Mar</span></div>
+                                <div class="bar-column"><div class="bar-fill" style="height: 76%;"></div><span>Apr</span></div>
+                                <div class="bar-column"><div class="bar-fill" style="height: 80%;"></div><span>May</span></div>
+                                <div class="bar-column"><div class="bar-fill" style="height: 74%;"></div><span>Jun</span></div>
+                                <div class="bar-column"><div class="bar-fill" style="height: 82%;"></div><span>Jul</span></div>
+                                <div class="bar-column"><div class="bar-fill" style="height: 85%;"></div><span>Aug</span></div>
+                                <div class="bar-column"><div class="bar-fill" style="height: 81%;"></div><span>Sep</span></div>
+                                <div class="bar-column"><div class="bar-fill" style="height: 58%;"></div><span>Oct</span></div>
+                                <div class="bar-column"><div class="bar-fill" style="height: 80%;"></div><span>Nov</span></div>
+                                <div class="bar-column"><div class="bar-fill" style="height: 88%;"></div><span>Dec</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <h3 class="chart-card-title">Permits by Type</h3>
+                    <div class="donut-chart-wrapper">
+                        <div class="donut-graphic-render">
+                            <svg viewBox="0 0 42 42" class="donut-svg">
+                                <circle class="donut-ring" cx="21" cy="21" r="15.915" fill="transparent" stroke="#e5e7eb" stroke-width="5"></circle>
+                                <circle class="donut-segment" cx="21" cy="21" r="15.915" fill="transparent" stroke="#486ba6" stroke-width="5" stroke-dasharray="45 55" stroke-dashoffset="25"></circle>
+                                <circle class="donut-segment" cx="21" cy="21" r="15.915" fill="transparent" stroke="#7c6bb5" stroke-width="5" stroke-dasharray="30 70" stroke-dashoffset="80"></circle>
+                                <circle class="donut-segment" cx="21" cy="21" r="15.915" fill="transparent" stroke="#d99f59" stroke-width="5" stroke-dasharray="15 85" stroke-dashoffset="50"></circle>
+                                <circle class="donut-segment" cx="21" cy="21" r="15.915" fill="transparent" stroke="#f1cb62" stroke-width="5" stroke-dasharray="10 90" stroke-dashoffset="35"></circle>
+                            </svg>
+                        </div>
+                        <div class="donut-legend-list">
+                            <div class="legend-item"><span class="legend-color stroke-blue"></span><span class="legend-label">Mayor's Permit</span><span class="legend-pct">45%</span></div>
+                            <div class="legend-item"><span class="legend-color stroke-purple"></span><span class="legend-label">Business Permit</span><span class="legend-pct">30%</span></div>
+                            <div class="legend-item"><span class="legend-color stroke-orange"></span><span class="legend-label">Sanitary Permit</span><span class="legend-pct">15%</span></div>
+                            <div class="legend-item"><span class="legend-color stroke-yellow"></span><span class="legend-label">Others</span><span class="legend-pct">10%</span></div>
+                        </div>
+                    </div>
+                    <div class="chart-timestamp-subtext">: As of May 2026</div>
+                </div>
+            </section>
+
+            <section class="activity-log-card">
+                <div class="activity-card-header">Recent Activities</div>
+                <ul class="activity-list-group">
+                    <li class="activity-item"><span class="activity-text">• New Business Registration: ABC Corporations</span><span class="activity-time">May 24, 2026 10:32 AM</span></li>
+                    <li class="activity-item"><span class="activity-text">• Permit Approved: Of-2026-000415 (ABC Corporation)</span><span class="activity-time">May 24, 2026 10:15 AM</span></li>
+                    <li class="activity-item"><span class="activity-text">• New Permit Application: Of-2026-00067 (Butuan Ethers Cafe)</span><span class="activity-time">May 24, 2026 9:49 AM</span></li>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <div class="modal-overlay" id="exportModal">
+        <div class="modal-container format-modal">
+            <div class="modal-body-content">
+                <div class="input-selection-wrapper">
+                    <label class="modal-input-label">Export Format</label>
+                    <div class="dropdown-custom-container">
+                        <select class="modal-select-element">
+                            <option value="" disabled selected hidden>Format Type</option>
+                            <option value="pdf">PDF Document (.pdf)</option>
+                            <option value="excel">Excel Spreadsheet (.xlsx)</option>
+                            <option value="csv">CSV (Comma Separated Values)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer-actions">
+                <button class="btn-modal-cancel" id="closeExportBtn">X Cancel</button>
+                <button class="btn-modal-submit" id="submitExportBtn">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-container success-modal-box">
+            <div class="success-icon-wrapper">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2 class="success-title">Report Generated</h2>
+            <h3 class="success-subtitle">successfully!</h3>
+            <p class="success-text">Your report has been saved and is ready for viewing or export.</p>
+            <button class="btn-success-done" id="finalDoneBtn">Done</button>
+        </div>
+    </div>
+
+    <script>
+        // DOM Element Selectors
+        const exportModal = document.getElementById('exportModal');
+        const successModal = document.getElementById('successModal');
+        
+        const openGenerateBtn = document.getElementById('openModalBtn');
+        const closeExportBtn = document.getElementById('closeExportBtn');
+        const submitExportBtn = document.getElementById('submitExportBtn');
+        const finalDoneBtn = document.getElementById('finalDoneBtn');
+
+        // 1. Click "Generate Report" -> Show Format Selection Modal
+        openGenerateBtn.addEventListener('click', () => {
+            exportModal.classList.add('active');
+        });
+
+        // 2. Click "X Cancel" -> Close Format Selection Modal
+        closeExportBtn.addEventListener('click', () => {
+            exportModal.classList.remove('active');
+        });
+
+        // 3. Click "Next" -> Hide Format Modal & Open Success Modal
+        submitExportBtn.addEventListener('click', () => {
+            exportModal.classList.remove('active');
+            successModal.classList.add('active');
+        });
+
+        // 4. Click "Done" -> Close Success Modal (Returns to active Reports page)
+        finalDoneBtn.addEventListener('click', () => {
+            successModal.classList.remove('active');
+        });
+
+        // Safety feature: Clicking background tint closes the open window
+        window.addEventListener('click', (e) => {
+            if (e.target === exportModal) exportModal.classList.remove('active');
+            if (e.target === successModal) successModal.classList.remove('active');
+        });
+    </script>
+</body>
+</html>

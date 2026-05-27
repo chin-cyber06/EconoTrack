@@ -1,0 +1,626 @@
+/* ==========================================================================
+   1. ROOT RESET & APPLICATION VARIABLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #ededed;
+    display: flex;
+    min-height: 100vh;
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   2. SYSTEM SIDEBAR PLATFORM MENU Layout
+   ========================================================================== */
+.sidebar {
+    width: 260px;
+    background-color: #e2e4e7;
+    border-right: 1px solid #d1d5db;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.sidebar-brand {
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo-mock {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #1a365d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-fallback-icon {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.brand-text h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: 0.5px;
+}
+
+.brand-text p {
+    font-size: 9px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.sidebar-menu {
+    padding: 15px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    color: #71717a;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.menu-item i {
+    width: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.menu-item:hover {
+    background-color: #d4d4d8;
+    color: #18181b;
+}
+
+.menu-item.active {
+    background-color: #4672a9;
+    color: white;
+}
+
+.sidebar-footer {
+    padding: 15px 12px;
+    border-top: 1px solid #d1d5db;
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. CONTENT CONTAINER WORKSPACE PANELS
+   ========================================================================== */
+.main-content {
+    margin-left: 260px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.top-navbar {
+    height: 65px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.toggle-sidebar {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #1f2937;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.notification-bell {
+    font-size: 22px;
+    color: #1f2937;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.profile-avatar-mock {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #3b82f6;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.user-role {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.content-container {
+    padding: 0 32px 32px 32px;
+}
+
+.module-header-row {
+    margin-bottom: 20px;
+}
+
+.title-block h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-block h1 i {
+    background-color: #111827;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.breadcrumbs {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   4. STRUCTURE CARDS ARCHITECTURE (FILTER & RESULTS)
+   ========================================================================== */
+.filter-card, .results-card {
+    background-color: #fcfcfc;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.01);
+    padding: 24px 32px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 20px;
+}
+
+.card-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: 0.3px;
+}
+
+.text-blue {
+    color: #32649a;
+}
+
+/* Header Buttons Configurations */
+.filter-action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-search-record {
+    background-color: #2b5282;
+    color: #ffffff;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-search-record:hover {
+    background-color: #1d3b61;
+}
+
+.btn-clear-filters {
+    background-color: #ffffff;
+    color: #4b5563;
+    border: 1px solid #d1d5db;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-clear-filters:hover {
+    background-color: #f3f4f6;
+}
+
+/* ==========================================================================
+   5. CONTROL FORM GRIDS AND RANGE INPUTS
+   ========================================================================== */
+.filter-form-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    height: 40px;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    padding: 0 14px;
+    font-size: 13px;
+    color: #374151;
+    outline: none;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+.form-group input::placeholder {
+    color: #b9bdc2;
+}
+
+/* Date Custom Split Grid Controls Wrapper */
+.date-range-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.date-input-icon {
+    position: relative;
+    flex-grow: 1;
+}
+
+.date-input-icon i {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+    font-size: 15px;
+    pointer-events: none;
+}
+
+.range-to-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   6. SEARCH RESULTS & DYNAMIC SUB-HEADER COMPONENTS
+   ========================================================================== */
+.results-title-block {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.records-found-badge {
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    color: #4b5563;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.sort-by-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sort-by-wrapper label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #4b5563;
+}
+
+.select-sort {
+    height: 34px;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 6px;
+    padding: 0 35px 0 12px;
+    font-size: 12.5px;
+    color: #4b5563;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 14px;
+}
+
+/* ==========================================================================
+   7. UNIFIED DATA TABLE MATRIX SYSTEM
+   ========================================================================== */
+.table-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.records-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.records-data-table th {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    letter-spacing: 0.3px;
+}
+
+.records-data-table td {
+    padding: 12px 16px;
+    border: 1px solid #e5e7eb;
+    vertical-align: middle;
+    font-size: 13px;
+    color: #374151;
+}
+
+.records-data-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+/* Context Element Enhancements Inside Cells */
+.date-cell {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.time-cell {
+    font-size: 11px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.entity-name {
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.entity-id {
+    font-size: 11.5px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+/* Record Type Sub Badges Styles */
+.badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.badge-reg {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.badge-permit {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+/* Application Status Pill Elements Matrix */
+.status-pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 14px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 90px;
+}
+
+.status-approved {
+    background-color: #d1fae5;
+    color: #10b981;
+}
+
+.status-pending {
+    background-color: #fef3c7;
+    color: #f59e0b;
+}
+
+.status-expired {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+
+/* Interaction Actions Controls Grid */
+.action-cell-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.action-icon-btn {
+    background: none;
+    border: none;
+    color: #4b5563;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px;
+    transition: color 0.15s ease;
+}
+
+.action-icon-btn:hover {
+    color: #111827;
+}
+
+/* ==========================================================================
+   8. FOOTER TABLE PAGINATION LAYOUT CONFIG
+   ========================================================================== */
+.table-pagination-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.showing-entries-label {
+    font-size: 12.5px;
+    color: #6b7280;
+}
+
+.pagination-pages-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.p-num-btn, .p-arrow-btn {
+    height: 32px;
+    min-width: 32px;
+    border-radius: 4px;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    color: #4b5563;
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 6px;
+    transition: all 0.15s ease;
+}
+
+.p-num-btn:hover:not(.active), .p-arrow-btn:hover:not(:disabled) {
+    background-color: #f3f4f6;
+    border-color: #b5bac1;
+    color: #111827;
+}
+
+.p-num-btn.active {
+    background-color: #3b5998;
+    border-color: #3b5998;
+    color: #ffffff;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.p-arrow-btn:disabled {
+    color: #d1d5db;
+    background-color: #f9fafb;
+    cursor: not-allowed;
+    border-color: #e5e7eb;
+}
+
+/* ==========================================================================
+   9. EXTRA UTILITIES & MEDIA CONFIGURATION BREAKPOINTS
+   ========================================================================== */
+.mb-16 { margin-bottom: 16px; }
+.text-center { text-align: center; }
+
+@media (max-width: 1200px) {
+    .filter-form-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .sidebar { display: none; }
+    .main-content { margin-left: 0; }
+    .filter-form-grid { grid-template-columns: 1fr; }
+    .card-header-row { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .filter-action-buttons { width: 100%; }
+    .filter-action-buttons button { flex-grow: 1; justify-content: center; }
+}

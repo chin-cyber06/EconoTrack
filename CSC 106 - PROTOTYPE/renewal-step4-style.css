@@ -1,0 +1,692 @@
+/* ==========================================================================
+   1. CORE GLOBAL STYLING & CLEAN RESET RULES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #ededed;
+    display: flex;
+    min-height: 100vh;
+    color: #4b5563;
+}
+
+/* ==========================================================================
+   2. UNIFIED SIDEBAR NAVIGATION MENU
+   ========================================================================== */
+.sidebar {
+    width: 260px;
+    background-color: #e2e4e7;
+    border-right: 1px solid #d1d5db;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.sidebar-brand {
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo-mock {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.brand-text h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: 0.5px;
+}
+
+.brand-text p {
+    font-size: 9px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.sidebar-menu {
+    padding: 15px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    color: #71717a;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.menu-item i {
+    width: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.menu-item:hover {
+    background-color: #d4d4d8;
+    color: #18181b;
+}
+
+.menu-item.active {
+    background-color: #4672a9;
+    color: white;
+}
+
+.sidebar-footer {
+    padding: 15px 12px;
+    border-top: 1px solid #d1d5db;
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. MAIN WORKSPACE SETUP & BACKDROP BLUR
+   ========================================================================== */
+.main-content {
+    margin-left: 260px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    transition: filter 0.25s ease, background-color 0.25s ease;
+}
+
+/* Modal dark active backdrop blur style logic filter */
+.main-content.blurred-background {
+    filter: brightness(0.6);
+    pointer-events: none; /* Prevents back-clicking actions while open */
+}
+
+.top-navbar {
+    height: 65px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.toggle-sidebar {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #1f2937;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.notification-bell {
+    font-size: 22px;
+    color: #1f2937;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.profile-img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.user-role {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+/* ==========================================================================
+   4. CONTENT LAYOUT CONTROLLERS
+   ========================================================================== */
+.content-container {
+    padding: 0 32px 32px 32px;
+}
+
+.module-header-row {
+    margin-bottom: 24px;
+}
+
+.title-block h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-block h1 i {
+    background-color: #111827;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.breadcrumbs {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+.data-management-card {
+    background-color: #fcfcfc;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+    padding: 32px;
+}
+
+/* ==========================================================================
+   5. PROGRESS MATRIX WIZARD TRACKER
+   ========================================================================== */
+.wizard-progress-tracker {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 32px;
+    padding: 0 60px;
+}
+
+.wizard-progress-tracker::before {
+    content: '';
+    position: absolute;
+    top: 18px;
+    left: 100px;
+    right: 100px;
+    height: 2px;
+    background-color: #e5e7eb;
+    z-index: 1;
+}
+
+.step-item {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #fcfcfc;
+    padding: 0 12px;
+}
+
+.step-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #9ca3af;
+}
+
+.step-item.completed .step-num {
+    background-color: #55936a;
+    color: #ffffff;
+}
+
+.step-item.completed .step-label {
+    color: #55936a;
+    font-weight: 500;
+}
+
+.step-item.active .step-num {
+    background-color: #4672a9;
+    color: #ffffff;
+}
+
+.step-item.active .step-label {
+    color: #1e3a8a;
+    font-weight: 600;
+}
+
+.step-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #4672a9;
+}
+
+/* ==========================================================================
+   6. INFO WARNING BANNER INTERFACES
+   ========================================================================== */
+.info-alert-banner {
+    background-color: #f4f6f9;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 32px;
+}
+
+.info-alert-banner i {
+    color: #4672a9;
+    font-size: 18px;
+    margin-top: 1px;
+}
+
+.alert-text h3 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2c4463;
+    margin-bottom: 4px;
+}
+
+.alert-text p {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+.required-star {
+    color: #dc2626;
+}
+
+/* ==========================================================================
+   7. DETAILED SUMMARY PREVIEW BLOCKS
+   ========================================================================== */
+.review-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.review-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-preview-block {
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.block-header {
+    background-color: #dbdee2;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #dcdcdc;
+}
+
+.block-header h2 {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #2c4463;
+}
+
+.btn-edit-section {
+    background-color: #ffffff;
+    border: 1px solid #b5bac1;
+    color: #4b5563;
+    padding: 4px 14px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.btn-edit-section:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+.block-body {
+    padding: 16px;
+}
+
+.subsection-subheading {
+    font-size: 13px;
+    font-weight: 700;
+    color: #4672a9;
+    margin-bottom: 10px;
+}
+
+.data-summary-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-summary-table td {
+    padding: 6px 0;
+    vertical-align: top;
+    font-size: 12.5px;
+    line-height: 1.5;
+}
+
+.lbl-cell {
+    color: #4b5563;
+    font-weight: 600;
+    width: 175px;
+}
+
+.delim-cell {
+    color: #9ca3af;
+    width: 20px;
+    text-align: center;
+}
+
+.val-cell {
+    color: #111827;
+    font-weight: 500;
+}
+
+/* Document Item Action Lists Section 3 Panel */
+.requirements-review-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.requirements-review-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12.5px;
+}
+
+.doc-title {
+    color: #374151;
+    font-weight: 600;
+}
+
+.btn-replace-doc {
+    background-color: #ffffff;
+    border: 1px solid #b5bac1;
+    color: #4b5563;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.btn-replace-doc:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+}
+
+/* System Reminder Alert Container */
+.submission-reminder-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 24px;
+}
+
+.reminder-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #b45309;
+    margin-bottom: 12px;
+}
+
+.reminder-header i {
+    font-size: 16px;
+}
+
+.reminder-header h3 {
+    font-size: 13.5px;
+    font-weight: 700;
+}
+
+.reminder-bullets-list {
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.reminder-bullets-list li {
+    font-size: 12px;
+    color: #4b5563;
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   8. FOOTER WORKFLOW ACTIONS MATRIX CONTROL LINES
+   ========================================================================== */
+.wizard-actions-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 24px;
+}
+
+.required-notice-footer {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.action-btn-group {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-cancel-action {
+    background-color: #f3f4f6;
+    border: 1px solid #d1d5db;
+    color: #4b5563;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel-action:hover {
+    background-color: #e5e7eb;
+}
+
+.btn-primary-action {
+    background-color: #4672a9;
+    color: #ffffff;
+    border: none;
+    padding: 10px 32px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary-action:hover {
+    background-color: #355887;
+}
+
+/* ==========================================================================
+   9. INTERACTION CONFIRMATION MODAL ARCHITECTURE
+   ========================================================================== */
+.modal-overlay-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent; /* Handled cleanly via filter blurring parent wrapper */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+/* Class toggled by JS logic to run fade-in overlay triggers */
+.modal-overlay-backdrop.show-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-dialog-box {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 580px;
+    border-radius: 20px;
+    padding: 45px 30px;
+    text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    border: 1px solid #e5e7eb;
+    transform: scale(0.9);
+    transition: transform 0.25s ease;
+}
+
+.modal-overlay-backdrop.show-active .modal-dialog-box {
+    transform: scale(1);
+}
+
+.success-icon-container {
+    width: 80px;
+    height: 80px;
+    background-color: #111827; /* Dark black background matching image layout */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px auto;
+}
+
+.success-icon-container i {
+    color: #ffffff;
+    font-size: 36px;
+}
+
+.modal-dialog-box h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+}
+
+.highlight-blue {
+    color: #3b82f6; /* Accent color matching image typography styling */
+}
+
+.modal-dialog-box p {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 32px;
+}
+
+.btn-modal-done {
+    background-color: #2b5282; /* Custom matching steel-blue dark theme buttons */
+    color: #ffffff;
+    border: none;
+    padding: 10px 48px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.btn-modal-done:hover {
+    background-color: #1d3b61;
+}
+
+/* ==========================================================================
+   10. SPACERS UTILITY HELPER CLASSES
+   ========================================================================== */
+.mt-16 { margin-top: 16px; }
+.mt-24 { margin-top: 24px; }
+
+/* ==========================================================================
+   11. DEVICE RESPONSIVE SYSTEM MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .review-split-layout { grid-template-columns: 1fr; gap: 24px; }
+    .wizard-progress-tracker { padding: 0 10px; }
+}
+
+@media (max-width: 768px) {
+    .sidebar { display: none; }
+    .main-content { margin-left: 0; }
+    .wizard-progress-tracker { display: none; }
+    .modal-dialog-box { margin: 20px; padding: 35px 20px; }
+}

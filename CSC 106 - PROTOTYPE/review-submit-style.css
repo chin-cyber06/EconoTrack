@@ -1,0 +1,325 @@
+/* Upper 3-Column Summary Cards Alignment Setup */
+.review-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 10px;
+}
+
+/* Lower Row 2-Column Section Mapping */
+.review-lower-row-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1.7fr;
+    gap: 16px;
+    margin-top: 16px;
+}
+
+/* Individual Content Blocks Wrapper Styling */
+.review-section-card {
+    background-color: #f9fafb;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-section-card.transparent-bg {
+    background-color: transparent;
+    border: none;
+}
+
+/* Panel Header Element Layout rules */
+.review-card-header {
+    background-color: #e5e7eb;
+    border-bottom: 1px solid #d1d5db;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.review-card-header.border-none {
+    border: none;
+    background-color: transparent;
+    padding-left: 0;
+}
+
+.review-card-header h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    margin: 0;
+}
+
+/* Action Trigger Component Blocks */
+.btn-edit-step {
+    font-size: 11px;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #4672a9;
+    padding: 2px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.15s;
+}
+
+.btn-edit-step:hover {
+    background-color: #355885;
+}
+
+/* Form Key-Value Output Line Rules */
+.review-card-body {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.data-group {
+    font-size: 12px;
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    color: #4b5563;
+}
+
+.data-label {
+    font-weight: 500;
+    color: #6b7280;
+}
+
+.data-value {
+    color: #111827;
+    font-weight: 500;
+    margin-top: 1px;
+}
+
+/* Requirements List Specific Inner Rows Layout */
+.requirements-list-view {
+    gap: 6px;
+}
+
+.req-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 0;
+    border-bottom: 1px dashed #e5e7eb;
+}
+
+.req-item-row:last-child {
+    border-bottom: none;
+}
+
+.req-item-name {
+    font-size: 12px;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.btn-replace-file {
+    font-size: 11px;
+    font-weight: 600;
+    color: #4672a9;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    padding: 2px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.btn-replace-file:hover {
+    background-color: #f3f4f6;
+    border-color: #9ca3af;
+}
+
+/* Declaration Group Alignment Styles */
+.declaration-checkbox-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 4px;
+}
+
+.declaration-checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    background-color: #f9fafb;
+    border: 1px solid #d1d5db;
+    padding: 10px 14px;
+    border-radius: 6px;
+}
+
+/* Custom Checkbox Design Override styling */
+.declaration-checkbox-row input {
+    display: none;
+}
+
+.checkbox-custom-box {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background-color: #ffffff;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.declaration-checkbox-row input:checked + .checkbox-custom-box {
+    background-color: #4672a9;
+    border-color: #4672a9;
+}
+
+.declaration-checkbox-row input:checked + .checkbox-custom-box::after {
+    content: "\f00c";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 10px;
+    color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkbox-text-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #374151;
+}
+
+/* Solid Blue Master Submission Trigger style override */
+.btn-submit-form {
+    background-color: #4672a9;
+    color: #ffffff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-submit-form:hover {
+    background-color: #355885;
+}
+
+/* Responsive breakdowns for compact tablets and screens */
+@media (max-width: 1024px) {
+    .review-summary-grid {
+        grid-template-columns: 1fr;
+    }
+    .review-lower-row-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dark Semi-Transparent Modal Backdrop Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.45); /* Soft background dim darkener */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensures it sits on top of sidebar and top navbar layers */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease-in-out;
+}
+
+/* Toggled Active Class State */
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Centralized Success Dialog Alert Card Design */
+.modal-card {
+    background-color: #d1dbe7; /* Accurate soft grayish-blue background fill color */
+    width: 100%;
+    max-width: 480px;
+    padding: 35px 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    transform: scale(0.9);
+    transition: transform 0.25s ease-in-out;
+}
+
+.modal-overlay.active .modal-card {
+    transform: scale(1);
+}
+
+/* Rounded Success Indicator Icon Graphics Setup */
+.success-icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #111827; /* Dark charcoal/black color token */
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+}
+
+.success-icon-circle i {
+    font-size: 32px;
+}
+
+/* Text & Headings Formatting Configuration Rules */
+.modal-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+}
+
+.modal-title .highlight-blue {
+    color: #4672a9; /* System blue highlight font token */
+    font-weight: 700;
+}
+
+.modal-subtitle {
+    font-size: 13px;
+    color: #4b5563;
+    font-weight: 500;
+    margin: 0 0 25px 0;
+}
+
+/* Master Primary Blue Action Navigation Link Component rules */
+.btn-modal-done {
+    display: inline-block;
+    background-color: #214b7e; /* Royal blue solid color scheme filling rule */
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 36px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, transform 0.1s ease;
+}
+
+/* Smooth color shifts when the user hovers or clicks down */
+.btn-modal-done:hover {
+    background-color: #16355b; 
+}
+
+.btn-modal-done:active {
+    transform: scale(0.98); /* Slight click feedback */
+}

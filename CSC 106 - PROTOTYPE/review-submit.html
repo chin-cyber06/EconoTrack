@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - Review & Submit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="form-style.css">
+    <link rel="stylesheet" href="review-submit-style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="butuan-logo.png" alt="Butuan Logo" class="brand-logo">
+            <div class="brand-text">
+                <h2>ECONOTRACK</h2>
+                <p>Business Permit Registration System</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-house"></i> <span>Dashboard</span>
+            </a>
+            <a href="business-registration.html" class="menu-item active">
+                <i class="fa-solid fa-user-plus"></i> <span>Business Registration</span>
+            </a>
+            <a href="business-permits.html" class="menu-item">
+                <i class="fa-solid fa-file-invoice"></i> <span>Business Permits</span>
+            </a>
+            <a href="permit-renewal.html" class="menu-item">
+                <i class="fa-solid fa-arrows-rotate"></i> <span>Permit Renewal</span>
+            </a>
+            <a href="search-records.html" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Search Records</span>
+            </a>
+           <a href="reports.html" class="menu-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Reports</span>
+            </a>
+            <a href="user-management.html" class="menu-item">
+                <i class="fa-solid fa-users"></i> <span>Users Management</span>
+            </a>
+            <a href="backup-recovery.html" class="menu-item">
+                <i class="fa-solid fa-database"></i> <span>Backup & Recovery</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i> <span>Settings</span>
+            </a>
+            <a href="help-support.html" class="menu-item">
+                <i class="fa-solid fa-circle-question"></i> <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="top-navbar">
+            <div class="nav-left">
+                <button class="toggle-sidebar-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <div class="nav-right">
+                <div class="nav-icon-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-badge"></span>
+                </div>
+                <div class="user-profile">
+                    <img src="andrea-profile.png" alt="User Avatar" class="profile-img">
+                    <div class="profile-info">
+                        <span class="user-name">Andrea Cago</span>
+                        <span class="user-role">LGU Staff</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-body">
+            
+            <div class="form-header-area">
+                <h1><i class="fa-solid fa-user-plus form-icon"></i> Business Registration</h1>
+                <p class="breadcrumbs">Dashboard &gt; Business Registration &gt; <span>New Registration</span></p>
+            </div>
+
+            <div class="form-container-card">
+                
+                <div class="step-progress-bar">
+                    <div class="step-item completed">
+                        <span class="step-num"><i class="fa-solid fa-check"></i></span>
+                        <span class="step-label">Business Information</span>
+                    </div>
+                    <div class="step-item completed">
+                        <span class="step-num"><i class="fa-solid fa-check"></i></span>
+                        <span class="step-label">Owner Information</span>
+                    </div>
+                    <div class="step-item completed">
+                        <span class="step-num"><i class="fa-solid fa-check"></i></span>
+                        <span class="step-label">Business Address</span>
+                    </div>
+                    <div class="step-item completed">
+                        <span class="step-num"><i class="fa-solid fa-check"></i></span>
+                        <span class="step-label">Requirements</span>
+                    </div>
+                    <div class="step-item active">
+                        <span class="step-num">5</span>
+                        <span class="step-label">Review & Submit</span>
+                    </div>
+                </div>
+
+                <div class="info-alert-banner">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div class="alert-text">
+                        <h3>Step 5 of 5: Review & Submit</h3>
+                        <p>Provide the basic details of your business registration. Fields marked with <span class="required-star">*</span> are required.</p>
+                    </div>
+                </div>
+
+                <form class="registration-wizard-form" id="reviewWizardForm">
+                    
+                    <div class="review-summary-grid">
+                        
+                        <div class="review-section-card">
+                            <div class="review-card-header">
+                                <h3>Section 1: Business Information</h3>
+                                <a href="new-registration.html" class="btn-edit-step">Edit</a>
+                            </div>
+                            <div class="review-card-body">
+                                <div class="data-group"><span class="data-label">Business Name:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Business Type:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Business Category:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Taxpayer Identification Number (TIN):</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">DTI / SEC Registration Number:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Number of Employees:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Expected Capital:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Registration Date:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Status:</span> <span class="data-value">--</span></div>
+                            </div>
+                        </div>
+
+                        <div class="review-section-card">
+                            <div class="review-card-header">
+                                <h3>Section 2: Owner Information</h3>
+                                <a href="owner-information.html" class="btn-edit-step">Edit</a>
+                            </div>
+                            <div class="review-card-body">
+                                <div class="data-group"><span class="data-label">Name:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Date of Birth:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Nationality:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Marital Status:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Gender:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Email Address:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Mobile Number:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Landline Number:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Permanent Residential Address:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Emergency Contact Person:</span> <span class="data-value">--</span></div>
+                            </div>
+                        </div>
+
+                        <div class="review-section-card">
+                            <div class="review-card-header">
+                                <h3>Section 3: Business Address</h3>
+                                <a href="business-address.html" class="btn-edit-step">Edit</a>
+                            </div>
+                            <div class="review-card-body">
+                                <div class="data-group"><span class="data-label">House/Block No./Lot No.:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Building Name (if applicable):</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Floor / Unit Number (if applicable):</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Street:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Barangay:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">City/Municipality:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Province:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">ZIP Code:</span> <span class="data-value">--</span></div>
+                                <div class="data-group"><span class="data-label">Specific Landmark:</span> <span class="data-value">--</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="review-lower-row-grid">
+                        
+                        <div class="review-section-card">
+                            <div class="review-card-header">
+                                <h3>Section 4: Requirements</h3>
+                            </div>
+                            <div class="review-card-body requirements-list-view">
+                                <div class="req-item-row">
+                                    <span class="req-item-name">1. Barangay Clearance</span>
+                                    <button type="button" class="btn-replace-file">Replace</button>
+                                </div>
+                                <div class="req-item-row">
+                                    <span class="req-item-name">2. DTI/SEC Registration</span>
+                                    <button type="button" class="btn-replace-file">Replace</button>
+                                </div>
+                                <div class="req-item-row">
+                                    <span class="req-item-name">3. BIR Certificate</span>
+                                    <button type="button" class="btn-replace-file">Replace</button>
+                                </div>
+                                <div class="req-item-row">
+                                    <span class="req-item-name">4. Lease contract</span>
+                                    <button type="button" class="btn-replace-file">Replace</button>
+                                </div>
+                                <div class="req-item-row">
+                                    <span class="req-item-name">5. Occupancy Permit</span>
+                                    <button type="button" class="btn-replace-file">Replace</button>
+                                </div>
+                                <div class="req-item-row">
+                                    <span class="req-item-name">6. Fire Safety Inspection Certificate</span>
+                                    <button type="button" class="btn-replace-file">Replace</button>
+                                </div>
+                                <div class="req-item-row">
+                                    <span class="req-item-name">7. Sanitary Permit</span>
+                                    <button type="button" class="btn-replace-file">Replace</button>
+                                </div>
+                                <div class="req-item-row">
+                                    <span class="req-item-name">8. Cedula</span>
+                                    <button type="button" class="btn-replace-file">Replace</button>
+                                </div>
+                                <div class="req-item-row">
+                                    <span class="req-item-name">9. Valid IDs</span>
+                                    <button type="button" class="btn-replace-file">Replace</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="review-section-card transparent-bg">
+                            <div class="review-card-header border-none">
+                                <h3>Section 5: Final Declarations</h3>
+                            </div>
+                            <div class="declaration-checkbox-container">
+                                <label class="declaration-checkbox-row">
+                                    <input type="checkbox" required>
+                                    <span class="checkbox-custom-box"></span>
+                                    <span class="checkbox-text-label">I declare that all information is true and correct</span>
+                                </label>
+                                <label class="declaration-checkbox-row">
+                                    <input type="checkbox" required>
+                                    <span class="checkbox-custom-box"></span>
+                                    <span class="checkbox-text-label">I agree to the Terms of Service</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <p class="bottom-required-notice"><span class="required-star">*</span> Required fields</p>
+
+                    <div class="form-actions-row">
+                        <a href="requirements.html" class="btn-previous">Previous</a>
+                        <button type="submit" class="btn-submit-form">Submit</button>
+                    </div>
+                </form>
+
+                <div class="compliance-footer-note">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <span><strong>Note:</strong> All information entered will be used for business registration and permit processing.</span>
+                </div>
+
+            </div>
+        </div>
+    </main>
+<div class="modal-overlay" id="successModal">
+        <div class="modal-card">
+            <div class="success-icon-circle">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            
+            <h2 class="modal-title">Business Registration Submitted <br><span class="highlight-blue">successfully!</span></h2>
+            <p class="modal-subtitle">Business details have been recorded in the system.</p>
+            
+            <a href="dashboard.html" class="btn-modal-done">Done</a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('reviewWizardForm');
+        const modal = document.getElementById('successModal');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents the page from refreshing instantly
+            modal.classList.add('active'); // Snaps the modal into view smoothly
+        });
+    </script>
+</body>
+</html>

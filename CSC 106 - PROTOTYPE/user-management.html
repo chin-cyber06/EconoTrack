@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - User Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="user-management-style.css">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo-mock">
+                 <img src="butuan-logo.png" alt="Butuan Logo" class="brand-logo">
+            </div>
+            <div class="brand-text">
+                <h2>ECONOTRACK</h2>
+                <p>Business Permit & Registration System</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-house"></i> <span>Dashboard</span>
+            </a>
+            <a href="business-registration.html" class="menu-item">
+                <i class="fa-solid fa-user-plus"></i> <span>Business Registration</span>
+            </a>
+           <a href="business-permits.html" class="menu-item">
+                <i class="fa-solid fa-file-invoice"></i> <span>Business Permits</span>
+            </a>
+            <a href="permit-renewal.html" class="menu-item">
+                <i class="fa-solid fa-arrows-rotate"></i> <span>Permit Renewal</span>
+            </a>
+             <a href="search-records.html" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Search Records</span>
+            </a>
+            <a href="reports.html" class="menu-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Reports</span>
+            </a>
+            <a href="user-management.html" class="menu-item active">
+                <i class="fa-solid fa-users"></i> <span>User Management</span>
+            </a>
+            <a href="backup-recovery.html" class="menu-item">
+                <i class="fa-solid fa-database"></i> <span>Backup & Recovery</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i> <span>Settings</span>
+            </a>
+            <a href="help-support.html" class="menu-item">
+                <i class="fa-solid fa-circle-question"></i> <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content" id="mainWorkspace">
+        
+        <header class="top-navbar">
+            <button class="toggle-sidebar"><i class="fa-solid fa-bars"></i></button>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell notification-bell"></i>
+                <img src="wendee-profile.png" alt="User Avatar" class="profile-img">
+                <div class="profile-info">
+                    <span class="user-name">Wendee Mae..</span>
+                    <span class="user-role">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-container">
+            
+            <div class="module-header-row">
+                <div class="title-block">
+                    <h1><i class="fa-solid fa-users header-icon"></i> User Management</h1>
+                    <p class="breadcrumbs">Dashboard > User Management</p>
+                </div>
+                <button class="btn-primary-action" id="btnNewUser">
+                    <i class="fa-solid fa-plus"></i> New User
+                </button>
+            </div>
+
+            <section class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-icon-box blue-bg">
+                        <i class="fa-solid fa-user-group"></i>
+                    </div>
+                    <div class="metric-data">
+                        <span class="metric-title">Total Users</span>
+                        <span class="metric-value">30</span>
+                        <span class="metric-subtext"><strong class="text-green">10</strong> New this month</span>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon-box green-bg">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <div class="metric-data">
+                        <span class="metric-title">Active Users</span>
+                        <span class="metric-value">21</span>
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-icon-box red-bg">
+                        <i class="fa-solid fa-user-slash"></i>
+                    </div>
+                    <div class="metric-data">
+                        <span class="metric-title">Inactive Users</span>
+                        <span class="metric-value">9</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="table-card-container">
+                
+                <div class="table-controls-bar">
+                    <div class="search-input-wrapper">
+                        <i class="fa-solid fa-magnifying-glass search-bar-icon"></i>
+                        <input type="text" placeholder="Search user, email, role...">
+                    </div>
+                    <button class="btn-secondary-filter">
+                        <i class="fa-solid fa-sliders"></i> Filters
+                    </button>
+                </div>
+
+                <div class="responsive-table-scroller">
+                    <table class="system-data-table">
+                        <thead>
+                            <tr>
+                                <th>User ID</th>
+                                <th>Full Name</th>
+                                <th>Email Address</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-semibold text-grey">USR-2026-1001</td>
+                                <td class="font-semibold">Elijjah Andrie Plaza</td>
+                                <td>elijah.plaza@gmail.com</td>
+                                <td>Admin</td>
+                                <td><span class="badge active-badge">Active</span></td>
+                                <td>
+                                    <div class="action-buttons-group">
+                                        <button class="action-icon-btn red-text" title="Delete User"><i class="fa-solid fa-trash-can"></i></button>
+                                        <button class="action-icon-btn black-text" title="Edit Permissions"><i class="fa-solid fa-user-gear"></i></button>
+                                        <button class="action-icon-btn text-grey" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-grey">USR-2026-1002</td>
+                                <td class="font-semibold">Maekyla Louise Cuabo</td>
+                                <td>kyla.cuabo@gmail.com</td>
+                                <td>Admin</td>
+                                <td><span class="badge active-badge">Active</span></td>
+                                <td>
+                                    <div class="action-buttons-group">
+                                        <button class="action-icon-btn red-text"><i class="fa-solid fa-trash-can"></i></button>
+                                        <button class="action-icon-btn black-text"><i class="fa-solid fa-user-gear"></i></button>
+                                        <button class="action-icon-btn text-grey"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-grey">USR-2026-1003</td>
+                                <td class="font-semibold">Gabriel Adrian Lorenzo</td>
+                                <td>gabriel.lorenzo@gmail.com</td>
+                                <td>Staff</td>
+                                <td><span class="badge inactive-badge">Inactive</span></td>
+                                <td>
+                                    <div class="action-buttons-group">
+                                        <button class="action-icon-btn red-text"><i class="fa-solid fa-trash-can"></i></button>
+                                        <button class="action-icon-btn black-text"><i class="fa-solid fa-user-gear"></i></button>
+                                        <button class="action-icon-btn text-grey"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-grey">USR-2026-1004</td>
+                                <td class="font-semibold">Enzo Drake Salvador</td>
+                                <td>enzo.salvador@gmail.com</td>
+                                <td>Staff</td>
+                                <td><span class="badge active-badge">Active</span></td>
+                                <td>
+                                    <div class="action-buttons-group">
+                                        <button class="action-icon-btn red-text"><i class="fa-solid fa-trash-can"></i></button>
+                                        <button class="action-icon-btn black-text"><i class="fa-solid fa-user-gear"></i></button>
+                                        <button class="action-icon-btn text-grey"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold text-grey">USR-2026-1005</td>
+                                <td class="font-semibold">Gideon Dimaguiba</td>
+                                <td>deon.dimaguiba@gmail.com</td>
+                                <td>Admin</td>
+                                <td><span class="badge inactive-badge">Inactive</span></td>
+                                <td>
+                                    <div class="action-buttons-group">
+                                        <button class="action-icon-btn red-text"><i class="fa-solid fa-trash-can"></i></button>
+                                        <button class="action-icon-btn black-text"><i class="fa-solid fa-user-gear"></i></button>
+                                        <button class="action-icon-btn text-grey"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-pagination-footer">
+                    <span class="pagination-info-text">Showing 1 to 5 of 30 entries</span>
+                    <div class="pagination-controls-buttons">
+                        <button class="page-arrow-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="page-number-btn active">1</button>
+                        <button class="page-number-btn">2</button>
+                        <button class="page-number-btn">3</button>
+                        <button class="page-number-btn">4</button>
+                        <button class="page-number-btn">5</button>
+                        <button class="page-arrow-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div class="drawer-side-panel-overlay" id="createAccountDrawer">
+        <div class="drawer-inner-container">
+            <div class="drawer-form-header">
+                <h2>Create System Account</h2>
+                <p>Register new administrative or support service profiles</p>
+            </div>
+            
+            <form class="drawer-form-body-wrapper" onsubmit="event.preventDefault();">
+                <div class="form-input-control">
+                    <label>First Name <span>*</span></label>
+                    <input type="text" placeholder="Enter first name" required>
+                </div>
+                <div class="form-input-control">
+                    <label>Last Name <span>*</span></label>
+                    <input type="text" placeholder="Enter last name" required>
+                </div>
+                <div class="form-input-control">
+                    <label>Email Address <span>*</span></label>
+                    <input type="email" placeholder="example@gmail.com" required>
+                </div>
+                <div class="form-input-control">
+                    <label>System Permissions Role <span>*</span></label>
+                    <select required>
+                        <option value="" disabled selected hidden>Select account role</option>
+                        <option value="admin">Admin Profile</option>
+                        <option value="staff">LGU Staff Member</option>
+                    </select>
+                </div>
+                <div class="form-input-control">
+                    <label>Temporary Password <span>*</span></label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+
+                <div class="drawer-form-footer-actions">
+                    <button type="button" class="btn-form-cancel" id="btnCancelCreate">Cancel</button>
+                    <button type="submit" class="btn-form-submit">Save Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const drawer = document.getElementById('createAccountDrawer');
+        const openBtn = document.getElementById('btnNewUser');
+        const cancelBtn = document.getElementById('btnCancelCreate');
+
+        // Toggle Drawer Screen States
+        openBtn.addEventListener('click', () => drawer.classList.add('drawer-open'));
+        cancelBtn.addEventListener('click', () => drawer.classList.remove('drawer-open'));
+    </script>
+</body>
+</html>

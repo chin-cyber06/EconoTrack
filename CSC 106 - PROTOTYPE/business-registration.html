@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - Business Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="registration-style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="butuan-logo.png" alt="Butuan Logo" class="brand-logo">
+            <div class="brand-text">
+                <h2>ECONOTRACK</h2>
+                <p>Business Permit Registration System</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-house"></i> <span>Dashboard</span>
+            </a>
+            <a href="business-registration.html" class="menu-item active">
+                <i class="fa-solid fa-user-plus"></i> <span>Business Registration</span>
+            </a>
+           <a href="business-permits.html" class="menu-item">
+                <i class="fa-solid fa-file-invoice"></i> <span>Business Permits</span>
+            </a>
+            <a href="permit-renewal.html" class="menu-item">
+                <i class="fa-solid fa-arrows-rotate"></i> <span>Permit Renewal</span>
+            </a>
+             <a href="search-records.html" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Search Records</span>
+            </a>
+           <a href="reports.html" class="menu-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Reports</span>
+            </a>
+            <a href="user-management.html" class="menu-item">
+                <i class="fa-solid fa-users"></i> <span>Users Management</span>
+            </a>
+            <a href="backup-recovery.html" class="menu-item">
+                <i class="fa-solid fa-database"></i> <span>Backup & Recovery</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i> <span>Settings</span>
+            </a>
+            <a href="help-support.html" class="menu-item">
+                <i class="fa-solid fa-circle-question"></i> <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="top-navbar">
+            <div class="nav-left">
+                <button class="toggle-sidebar-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <div class="nav-right">
+                <div class="nav-icon-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-badge"></span>
+                </div>
+                <div class="user-profile">
+                    <img src="andrea-profile.png" alt="User Avatar" class="profile-img">
+                    <div class="profile-info">
+                        <span class="user-name">Andrea Cago</span>
+                        <span class="user-role">LGU Staff</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-body">
+            
+            <div class="page-heading-area">
+                <div class="heading-left">
+                    <h1><i class="fa-solid fa-user-plus page-icon"></i> Business Registration</h1>
+                    <p class="breadcrumbs">Dashboard &gt; <span>Business Registration</span></p>
+                </div>
+                <a href="new-registration.html" class="btn-new-registration" style="text-decoration: none;">
+                    <i class="fa-solid fa-plus"></i> New Registration
+                </a>
+            </div>
+
+            <div class="table-container-block">
+                
+                <div class="table-filter-bar">
+                    <div class="search-input-wrapper">
+                        <i class="fa-solid fa-magnifying-glass search-bar-icon"></i>
+                        <input type="text" placeholder="Search business name, owner, type...">
+                    </div>
+                    <button class="btn-filter-toggle">
+                        <i class="fa-solid fa-sliders"></i> Filters
+                    </button>
+                </div>
+
+                <div class="table-responsive-wrapper">
+                    <table class="registration-data-table">
+                        <thead>
+                            <tr>
+                                <th>Business Name</th>
+                                <th>Owner</th>
+                                <th>Business Type</th>
+                                <th>Date Registered</th>
+                                <th>Status</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-semibold">ABC Merchandise</td>
+                                <td>Juan Dela Cruz</td>
+                                <td>Retail</td>
+                                <td>January 15, 2020</td>
+                                <td><span class="badge active-badge">Active</span></td>
+                                <td class="action-cell">
+                                    <button class="btn-action view" title="View"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-action download" title="Download"><i class="fa-solid fa-download"></i></button>
+                                    <button class="btn-action menu" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">Cafe Atreza</td>
+                                <td>Maria Santos</td>
+                                <td>Cafe</td>
+                                <td>March 10, 2021</td>
+                                <td><span class="badge active-badge">Active</span></td>
+                                <td class="action-cell">
+                                    <button class="btn-action view" title="View"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-action download" title="Download"><i class="fa-solid fa-download"></i></button>
+                                    <button class="btn-action menu" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">Green Builders Corp.</td>
+                                <td>Robert Villanueva</td>
+                                <td>Construction Company</td>
+                                <td>July 22, 2018</td>
+                                <td><span class="badge active-badge">Active</span></td>
+                                <td class="action-cell">
+                                    <button class="btn-action view" title="View"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-action download" title="Download"><i class="fa-solid fa-download"></i></button>
+                                    <button class="btn-action menu" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">Dela Rosa Hardware</td>
+                                <td>Pedro Dela Rosa</td>
+                                <td>Hardware Store</td>
+                                <td>May 5, 2019</td>
+                                <td><span class="badge active-badge">Active</span></td>
+                                <td class="action-cell">
+                                    <button class="btn-action view" title="View"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-action download" title="Download"><i class="fa-solid fa-download"></i></button>
+                                    <button class="btn-action menu" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">Crossfire Print Shop</td>
+                                <td>Mark Reyes</td>
+                                <td>Printing Services</td>
+                                <td>August 14, 2022</td>
+                                <td><span class="badge active-badge">Active</span></td>
+                                <td class="action-cell">
+                                    <button class="btn-action view" title="View"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-action download" title="Download"><i class="fa-solid fa-download"></i></button>
+                                    <button class="btn-action menu" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">JM Motorcycle Parts</td>
+                                <td>Jose Mercado</td>
+                                <td>Auto Parts Retail</td>
+                                <td>November 3, 2020</td>
+                                <td><span class="badge active-badge">Active</span></td>
+                                <td class="action-cell">
+                                    <button class="btn-action view" title="View"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-action download" title="Download"><i class="fa-solid fa-download"></i></button>
+                                    <button class="btn-action menu" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">Bright Solutions Inc.</td>
+                                <td>Angela Cruz</td>
+                                <td>IT Services</td>
+                                <td>February 28, 2021</td>
+                                <td><span class="badge active-badge">Active</span></td>
+                                <td class="action-cell">
+                                    <button class="btn-action view" title="View"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="btn-action download" title="Download"><i class="fa-solid fa-download"></i></button>
+                                    <button class="btn-action menu" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-pagination-footer">
+                    <span class="entries-info">Showing 1 to 7 of 67 entries</span>
+                    <div class="pagination-buttons">
+                        <button class="btn-page-arrow"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="btn-page-num active">1</button>
+                        <button class="btn-page-num">2</button>
+                        <button class="btn-page-num">3</button>
+                        <button class="btn-page-num">4</button>
+                        <button class="btn-page-num">5</button>
+                        <button class="btn-page-arrow"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

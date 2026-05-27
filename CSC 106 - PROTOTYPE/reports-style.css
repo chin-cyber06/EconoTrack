@@ -1,0 +1,781 @@
+/* ==========================================================================
+   1. ROOT APPLICATIONS RESET
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #ededed;
+    display: flex;
+    min-height: 100vh;
+    color: #1f2937;
+}
+
+/* ==========================================================================
+   2. SYSTEM SIDEBAR PLATFORM MENU
+   ========================================================================== */
+.sidebar {
+    width: 260px;
+    background-color: #e2e4e7;
+    border-right: 1px solid #d1d5db;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.sidebar-brand {
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo-mock {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #1a365d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-fallback-icon {
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.brand-text h2 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111827;
+    letter-spacing: 0.5px;
+}
+
+.brand-text p {
+    font-size: 9px;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.sidebar-menu {
+    padding: 15px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    color: #71717a;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.menu-item i {
+    width: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.menu-item:hover {
+    background-color: #d4d4d8;
+    color: #18181b;
+}
+
+.menu-item.active {
+    background-color: #4672a9;
+    color: white;
+}
+
+.sidebar-footer {
+    padding: 15px 12px;
+    border-top: 1px solid #d1d5db;
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 14px;
+    color: #4b5563;
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   3. CONTENT WORKSPACE PANELS FRAMEWORK
+   ========================================================================== */
+.main-content {
+    margin-left: 260px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.top-navbar {
+    height: 65px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+}
+
+.toggle-sidebar {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #1f2937;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.notification-bell {
+    font-size: 22px;
+    color: #1f2937;
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.profile-avatar-mock {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #4672a9;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.user-role {
+    font-size: 11px;
+    color: #6b7280;
+}
+
+.content-container {
+    padding: 0 32px 32px 32px;
+}
+
+.module-header-row {
+    margin-bottom: 24px;
+}
+
+.title-block h1 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.title-block h1 i {
+    background-color: #111827;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.breadcrumbs {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-top: 4px;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   4. FILTER SELECTION ACTIONS CONTROL BAR
+   ========================================================================== */
+.reports-filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+    gap: 20px;
+}
+
+.filter-controls-group {
+    display: flex;
+    gap: 16px;
+    flex-grow: 1;
+}
+
+.filter-control {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 220px;
+}
+
+.filter-control label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+.filter-control select {
+    height: 38px;
+    background-color: #fcfcfc;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 0 35px 0 12px;
+    font-size: 13px;
+    color: #4b5563;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 15px;
+}
+
+.btn-generate-report {
+    background-color: #fcfcfc;
+    color: #1f2937;
+    padding: 0 22px;
+    height: 38px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #2b5282;
+    transition: background 0.2s ease;
+}
+
+.btn-generate-report:hover {
+    background-color: #e2e8f0;
+}
+
+.icon-rotate {
+    transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   5. STATISTICAL SUMMARY METRICS GRID
+   ========================================================================== */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.metric-card {
+    background-color: #fcfcfc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.01);
+}
+
+.metric-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #4b5563;
+}
+
+.metric-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: #000000;
+}
+
+/* ==========================================================================
+   6. VISUAL CHARTS MATRIX SYSTEM (GRID VIEW)
+   ========================================================================== */
+.charts-container-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.chart-card {
+    background-color: #fcfcfc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.chart-card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 24px;
+}
+
+/* --- Pure CSS Graph: Bar Registration Trend --- */
+.bar-chart-wrapper {
+    display: flex;
+    height: 220px;
+    position: relative;
+    gap: 15px;
+}
+
+.y-axis-labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 195px;
+    font-size: 11px;
+    color: #9ca3af;
+    text-align: right;
+    width: 25px;
+}
+
+.bar-chart-graph {
+    flex-grow: 1;
+    position: relative;
+    height: 195px;
+}
+
+.grid-lines-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.grid-lines-background .line {
+    width: 100%;
+    height: 1px;
+    background-color: #e5e7eb;
+}
+
+.bars-data-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 10px;
+    z-index: 2;
+}
+
+.bar-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: flex-end;
+    width: 6%;
+}
+
+.bar-fill {
+    width: 100%;
+    background-color: #4285f4;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: 8px;
+}
+
+.bar-column span {
+    font-size: 10px;
+    color: #9ca3af;
+    position: absolute;
+    bottom: -22px;
+}
+
+/* --- Pure SVG/CSS Graph: Donut Graphic Render --- */
+.donut-chart-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 195px;
+    padding: 0 10px;
+}
+
+.donut-graphic-render {
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+.donut-svg {
+    transform: rotate(-90deg);
+    border-radius: 50%;
+}
+
+.donut-legend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-grow: 1;
+    padding-left: 30px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 12.5px;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.stroke-blue { background-color: #486ba6; }
+.stroke-purple { background-color: #7c6bb5; }
+.stroke-orange { background-color: #d99f59; }
+.stroke-yellow { background-color: #f1cb62; }
+
+.legend-label {
+    color: #4b5563;
+    font-weight: 500;
+    flex-grow: 1;
+}
+
+.legend-pct {
+    color: #1f2937;
+    font-weight: 600;
+    text-align: right;
+    padding-left: 15px;
+}
+
+.chart-timestamp-subtext {
+    position: absolute;
+    bottom: 12px;
+    left: 24px;
+    font-size: 10px;
+    color: #9ca3af;
+}
+
+/* ==========================================================================
+   7. RECENT ACTIVITIES FEED BOX LIST
+   ========================================================================== */
+.activity-log-card {
+    background-color: #fcfcfc;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.activity-card-header {
+    background-color: #dcdcdc;
+    color: #1f2937;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 14px 24px;
+    border-bottom: 1px solid #c8c8c8;
+}
+
+.activity-list-group {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 13px;
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-text {
+    color: #1f2937;
+    font-weight: 500;
+}
+
+.activity-time {
+    color: #6b7280;
+    font-size: 12.5px;
+}
+
+/* ==========================================================================
+   8. EXPORT CONFIGURATION POPUP LAYERS (MODAL)
+   ========================================================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.45); /* Accurately matches the system backdrop shade */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+/* Active class for popping the modal up */
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-container {
+    background-color: #e5e7eb;
+    width: 350px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transform: translateY(15px);
+    transition: transform 0.25s ease;
+}
+
+.modal-overlay.active .modal-container {
+    transform: translateY(0);
+}
+
+.modal-body-content {
+    background-color: #fcfcfc;
+    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid #d1d5db;
+}
+
+.input-selection-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.modal-input-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.dropdown-custom-container {
+    position: relative;
+    width: 100%;
+}
+
+.modal-select-element {
+    width: 100%;
+    height: 38px;
+    background-color: #fcfcfc;
+    border: 1px solid #c8c8c8;
+    border-radius: 6px;
+    padding: 0 35px 0 12px;
+    font-size: 13.5px;
+    color: #1f2937;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%231f2937'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 14px;
+}
+
+.modal-footer-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-modal-cancel {
+    background-color: #fcfcfc;
+    color: #4b5563;
+    border: 1px solid #c8c8c8;
+    border-radius: 6px;
+    height: 36px;
+    padding: 0 16px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.btn-modal-cancel:hover {
+    background-color: #f3f4f6;
+}
+
+.btn-modal-submit {
+    background-color: #4672a9;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    height: 36px;
+    padding: 0 24px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: background 0.15s;
+}
+
+.btn-modal-submit:hover {
+    background-color: #355887;
+}
+
+/* ==========================================================================
+   9. MEDIA BREAKPOINTS AND ADAPTIVE WRAPPERS
+   ========================================================================== */
+@media (max-width: 1400px) {
+    .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    .charts-container-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 992px) {
+    .reports-filter-bar { flex-direction: column; align-items: flex-start; }
+    .filter-controls-group { width: 100%; flex-wrap: wrap; }
+    .filter-control { width: calc(50% - 8px); }
+    .btn-generate-report { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 768px) {
+    .sidebar { display: none; }
+    .main-content { margin-left: 0; }
+    .filter-control { width: 100%; }
+    .metrics-grid { grid-template-columns: 1fr; }
+    .donut-chart-wrapper { flex-direction: column; height: auto; gap: 20px; }
+    .donut-legend-list { padding-left: 0; width: 100%; }
+    .activity-item { flex-direction: column; align-items: flex-start; gap: 4px; }
+}
+
+/* ==========================================================================
+   10. SUCCESS CONFIRMATION CONTAINER STYLING
+   ========================================================================== */
+.success-modal-box {
+    background-color: #cbd5e1; /* Replicates the thick slate/grey border wrapper */
+    width: 520px;              /* Exact proportion matching your interface mockup */
+    max-width: 90%;
+    border-radius: 24px;
+    padding: 40px 30px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+/* Big Black Center Success Checkmark Icon Badge */
+.success-icon-wrapper {
+    width: 90px;
+    height: 90px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.success-icon-wrapper i {
+    color: #ffffff;
+    font-size: 52px;
+}
+
+/* Headings matching font scales from mockups */
+.success-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #000000;
+    line-height: 1.2;
+}
+
+.success-subtitle {
+    font-size: 26px;
+    font-weight: 700;
+    color: #2b6cb0; /* Highlight primary blue brand color */
+    margin-bottom: 14px;
+    line-height: 1.2;
+}
+
+/* Description label under title */
+.success-text {
+    font-size: 14px;
+    color: #4a5568;
+    font-weight: 400;
+    max-width: 85%;
+    margin-bottom: 28px;
+    line-height: 1.5;
+}
+
+/* Rounded Primary System "Done" Button Control */
+.btn-success-done {
+    background-color: #2b5282;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    height: 42px;
+    width: 130px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.15s ease;
+}
+
+.btn-success-done:hover {
+    background-color: #1e3a5f;
+}
+
+/* Refined overlay transition for clean UI switches */
+.modal-overlay {
+    transition: opacity 0.15s linear !important;
+}

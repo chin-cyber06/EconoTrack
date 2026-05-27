@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard-style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="butuan-logo.png" alt="Butuan Logo" class="brand-logo">
+            <div class="brand-text">
+                <h2>ECONOTRACK</h2>
+                <p>Business Permit Registration System</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item active">
+                <i class="fa-solid fa-house"></i> <span>Dashboard</span>
+            </a>
+           <a href="business-registration.html" class="menu-item">
+                <i class="fa-solid fa-user-plus"></i> <span>Business Registration</span>
+            </a>
+            <a href="business-permits.html" class="menu-item">
+                <i class="fa-solid fa-file-invoice"></i> <span>Business Permits</span>
+            </a>
+            <a href="permit-renewal.html" class="menu-item">
+                <i class="fa-solid fa-arrows-rotate"></i> <span>Permit Renewal</span>
+            </a>
+             <a href="search-records.html" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Search Records</span>
+            </a>
+            <a href="reports.html" class="menu-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Reports</span>
+            </a>
+            <a href="user-management.html" class="menu-item">
+                <i class="fa-solid fa-users"></i> <span>Users Management</span>
+            </a>
+            <a href="backup-recovery.html" class="menu-item">
+                <i class="fa-solid fa-database"></i> <span>Backup & Recovery</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i> <span>Settings</span>
+            </a>
+            <a href="help-support.html" class="menu-item">
+                <i class="fa-solid fa-circle-question"></i> <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="index.html" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="top-navbar">
+            <div class="nav-left">
+                <button class="toggle-sidebar-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <div class="nav-right">
+                <div class="nav-icon-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-badge"></span>
+                </div>
+                <div class="user-profile">
+                    <img src="shayna-profile.png" alt="User Avatar" class="profile-img">
+                    <div class="profile-info">
+                        <span class="user-name">Shayna Ca...</span>
+                        <span class="user-role">LGU Staff</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="dashboard-body">
+            
+            <div class="dashboard-header">
+                <div class="title-section">
+                    <h1><i class="fa-solid fa-house title-icon"></i> DASHBOARD</h1>
+                </div>
+                <div class="date-badge">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>May 26, 2026</span>
+                    <span class="day-text">Tuesday</span>
+                </div>
+            </div>
+
+            <section class="metrics-grid">
+                <div class="metric-card card-blue">
+                    <div class="card-icon"><i class="fa-solid fa-shop"></i></div>
+                    <div class="card-data">
+                        <h3>Total Businesses</h3>
+                        <p class="counter">2,458</p>
+                        <span class="trend up"><i class="fa-solid fa-arrow-up"></i> 12% from last month</span>
+                    </div>
+                </div>
+                <div class="metric-card card-green">
+                    <div class="card-icon"><i class="fa-solid fa-file-circle-check"></i></div>
+                    <div class="card-data">
+                        <h3>Active Permits</h3>
+                        <p class="counter">1,987</p>
+                        <span class="trend up"><i class="fa-solid fa-arrow-up"></i> 8.2% from last month</span>
+                    </div>
+                </div>
+                <div class="metric-card card-orange">
+                    <div class="card-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div class="card-data">
+                        <h3>Pending Permits</h3>
+                        <p class="counter">213</p>
+                        <span class="trend down"><i class="fa-solid fa-arrow-down"></i> 4.3% from last month</span>
+                    </div>
+                </div>
+                <div class="metric-card card-red">
+                    <div class="card-icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+                    <div class="card-data">
+                        <h3>Expired Permits</h3>
+                        <p class="counter">258</p>
+                        <span class="trend down"><i class="fa-solid fa-arrow-down"></i> 2.1% from last month</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="dashboard-grid">
+                
+                <div class="grid-column-left">
+                    
+                    <div class="content-block">
+                        <div class="block-header">
+                            <h2>Permits Overview</h2>
+                            <select class="block-select"><option>This Year</option></select>
+                        </div>
+                        <div class="chart-placeholder">
+                            <div class="mock-line-chart">
+                                <span class="chart-label-mock">Line Chart Display Area [Jan - Dec]</span>
+                            </div>
+                            <div class="chart-legend">
+                                <span><span class="dot active-dot"></span> Active</span>
+                                <span><span class="dot approved-dot"></span> Approved</span>
+                                <span><span class="dot pending-dot"></span> Pending</span>
+                                <span><span class="dot expired-dot"></span> Expired</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-block">
+                        <div class="block-header">
+                            <h2>Recent Business Registrations</h2>
+                            <button class="btn-view-all">View All</button>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                               <thead>
+                                   <tr>
+                                       <th>Business Name</th>
+                                       <th>Owner</th>
+                                       <th>Business Type</th>
+                                       <th>Date Registered</th>
+                                       <th>Status</th>
+                                       <th>Action</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <tr>
+                                       <td>ABC Merchandise</td>
+                                       <td>Juan Dela Cruz</td>
+                                       <td>Retail</td>
+                                       <td>January 15, 2026</td>
+                                       <td><span class="status-badge active-status">Active</span></td>
+                                       <td><button class="action-eye-btn"><i class="fa-regular fa-eye"></i></button></td>
+                                   </tr>
+                                   <tr>
+                                       <td>Cafe Alreco</td>
+                                       <td>Maria Santos</td>
+                                       <td>Cafe</td>
+                                       <td>March 10, 2026</td>
+                                       <td><span class="status-badge active-status">Active</span></td>
+                                       <td><button class="action-eye-btn"><i class="fa-regular fa-eye"></i></button></td>
+                                   </tr>
+                                   <tr>
+                                       <td>Green Builders...</td>
+                                       <td>Robert Villanueva</td>
+                                       <td>Construction</td>
+                                       <td>July 22, 2025</td>
+                                       <td><span class="status-badge active-status">Active</span></td>
+                                       <td><button class="action-eye-btn"><i class="fa-regular fa-eye"></i></button></td>
+                                   </tr>
+                                   <tr>
+                                       <td>Dela Rosa Har...</td>
+                                       <td>Pedro Dela Rosa</td>
+                                       <td>Hardware Store</td>
+                                       <td>May 5, 2025</td>
+                                       <td><span class="status-badge active-status">Active</span></td>
+                                       <td><button class="action-eye-btn"><i class="fa-regular fa-eye"></i></button></td>
+                                   </tr>
+                               </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-column-right">
+                    
+                    <div class="content-block">
+                        <div class="block-header">
+                            <h2>Quick Actions</h2>
+                        </div>
+                        <div class="quick-actions-grid">
+                            <a href="#" class="action-square">
+                                <i class="fa-solid fa-user-plus text-blue"></i>
+                                <span>New Business Registration</span>
+                            </a>
+                            <a href="#" class="action-square">
+                                <i class="fa-solid fa-file-circle-plus text-green"></i>
+                                <span>New Permit Application</span>
+                            </a>
+                            <a href="#" class="action-square">
+                                <i class="fa-solid fa-arrows-rotate text-orange"></i>
+                                <span>Renew Permit</span>
+                            </a>
+                            <a href="#" class="action-square">
+                                <i class="fa-solid fa-magnifying-glass text-purple"></i>
+                                <span>Search Records</span>
+                            </a>
+                            <a href="#" class="action-square">
+                                <i class="fa-solid fa-chart-line text-teal"></i>
+                                <span>Generate Report</span>
+                            </a>
+                            <a href="#" class="action-square">
+                                <i class="fa-solid fa-cloud-arrow-up text-darkred"></i>
+                                <span>Backup Database</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="content-block">
+                        <div class="block-header">
+                            <h2>Permits by Type</h2>
+                        </div>
+                        <div class="pie-chart-container">
+                            <div class="mock-pie-chart"></div>
+                            <div class="pie-legend">
+                                <div class="legend-item"><span class="color-box p-mayor"></span> Mayor's Permit</div>
+                                <div class="legend-item"><span class="color-box p-business"></span> Business Permit</div>
+                                <div class="legend-item"><span class="color-box p-sanitary"></span> Sanitary Permit</div>
+                                <div class="legend-item"><span class="color-box p-others"></span> Others</div>
+                            </div>
+                        </div>
+                        <div class="pie-footer">As of May 2026</div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

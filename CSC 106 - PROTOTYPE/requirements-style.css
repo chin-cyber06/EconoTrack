@@ -1,0 +1,79 @@
+/* Requirements Grid Layout */
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* Individual Requirement Card */
+.requirement-card {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 120px;
+}
+
+.req-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+/* Upload Button Styling */
+.upload-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden-input {
+    display: none; /* Hide the actual file input */
+}
+
+.btn-add-file {
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    color: #4b5563;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+    width: 100%;
+    justify-content: center;
+}
+
+.btn-add-file:hover {
+    background-color: #f3f4f6;
+    border-color: #9ca3af;
+    color: #111827;
+}
+
+.btn-add-file i {
+    font-size: 14px;
+    color: #4672a9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .requirements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .requirements-grid {
+        grid-template-columns: 1fr;
+    }
+}

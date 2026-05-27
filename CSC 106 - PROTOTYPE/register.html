@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - Create Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="register-style.css">
+</head>
+<body>
+
+    <div class="register-container">
+        <div class="register-card">
+            
+            <div class="header-section">
+                <img src="butuan-logo.png" alt="Butuan City Logo" class="logo">
+                <div class="title-area">
+                    <h1>EconoTrack</h1>
+                    <p class="subtitle">Business Permit & Local Business<br>Registration Recording and Reporting System</p>
+                    <p class="lgu-text">LGU - Butuan City</p>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="welcome-section">
+                <h2>Create Account</h2>
+                <p>Please fill in the form below to create your account</p>
+            </div>
+
+            <form class="register-form">
+                
+                <div class="input-group">
+                    <label for="fullname">Full Name</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-user input-icon"></i>
+                        <input type="text" id="fullname" placeholder="Enter your full name" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-envelope input-icon"></i>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-id-badge input-icon"></i>
+                        <input type="text" id="username" placeholder="Choose a username" required>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" id="password" placeholder="Enter your password" required>
+                        <i class="fa-regular fa-eye-slash toggle-password"></i>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock input-icon"></i>
+                        <input type="password" id="confirm-password" placeholder="Confirm your password" required>
+                        <i class="fa-regular fa-eye-slash toggle-password"></i>
+                    </div>
+                </div>
+
+                <div class="form-utilities">
+                    <label class="terms-label">
+                        <input type="checkbox" required>
+                        <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-submit">Create Account</button>
+            </form>
+
+           <div class="signin-redirect">
+                <p>Already have an account? <a href="index.html">Sign in</a></p>
+            </div>
+
+            <footer class="card-footer">
+                <p>&copy; 2026 LGU Butuan City. All rights reserved.</p>
+            </footer>
+
+        </div>
+    </div>
+
+</body>
+</html>

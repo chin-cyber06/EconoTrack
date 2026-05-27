@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - Search Records</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="search-records-style.css">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo-mock">
+                <img src="butuan-logo.png" alt="Butuan Logo" class="brand-logo">
+            </div>
+            <div class="brand-text">
+                <h2>ECONOTRACK</h2>
+                <p>Business Permit & Registration System</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-house"></i> <span>Dashboard</span>
+            </a>
+           <a href="business-registration.html" class="menu-item">
+                <i class="fa-solid fa-user-plus"></i> <span>Business Registration</span>
+            </a>
+           <a href="business-permits.html" class="menu-item">
+                <i class="fa-solid fa-file-invoice"></i> <span>Business Permits</span>
+            </a>
+            <a href="permit-renewal.html" class="menu-item">
+                <i class="fa-solid fa-arrows-rotate"></i> <span>Permit Renewal</span>
+            </a>
+             <a href="search-records.html" class="menu-item active">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Search Records</span>
+            </a>
+            <a href="reports.html" class="menu-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Reports</span>
+            </a>
+            <a href="user-management.html" class="menu-item">
+                <i class="fa-solid fa-users"></i> <span>Users Management</span>
+            </a>
+            <a href="backup-recovery.html" class="menu-item">
+                <i class="fa-solid fa-database"></i> <span>Backup & Recovery</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i> <span>Settings</span>
+            </a>
+            <a href="help-support.html" class="menu-item">
+                <i class="fa-solid fa-circle-question"></i> <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="top-navbar">
+            <button class="toggle-sidebar"><i class="fa-solid fa-bars"></i></button>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell notification-bell"></i>
+                <img src="ermi-profile.png" alt="User Avatar" class="profile-img">
+                <div class="profile-info">
+                    <span class="user-name">Ermi Shayne...</span>
+                    <span class="user-role">LGU Staff</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-container">
+            
+            <div class="module-header-row">
+                <div class="title-block">
+                    <h1><i class="fa-solid fa-magnifying-glass header-icon"></i> Search Records</h1>
+                    <p class="breadcrumbs">Dashboard > Search Records</p>
+                </div>
+            </div>
+
+            <section class="filter-card">
+                <div class="card-header-row">
+                    <h2 class="section-title text-blue">
+                        <i class="fa-solid fa-filter"></i> SEARCH FILTERS
+                    </h2>
+                    <div class="filter-action-buttons">
+                        <button class="btn-search-record"><i class="fa-solid fa-magnifying-glass"></i> Search Record</button>
+                        <button class="btn-clear-filters"><i class="fa-solid fa-rotate-left"></i> Clear Filters</button>
+                    </div>
+                </div>
+
+                <div class="filter-form-grid">
+                    <div class="form-group">
+                        <label>Record Type</label>
+                        <select>
+                            <option selected disabled>Select (Business or Permit)</option>
+                            <option>Business Registration</option>
+                            <option>Business Permit</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Business Name / Permit No.</label>
+                        <input type="text" placeholder="Enter Business Name / Permit No.">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date Range</label>
+                        <div class="date-range-wrapper">
+                            <div class="date-input-icon">
+                                <input type="text" placeholder="MM/DD/YYYY">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </div>
+                            <span class="range-to-label">to</span>
+                            <div class="date-input-icon">
+                                <input type="text" placeholder="MM/DD/YYYY">
+                                <i class="fa-regular fa-calendar-days"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select>
+                            <option selected disabled>Select Status</option>
+                            <option>Approved</option>
+                            <option>Pending</option>
+                            <option>Expired</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Owner Name</label>
+                        <input type="text" placeholder="Enter Owner Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Business Type</label>
+                        <select>
+                            <option selected disabled>Select Business Type</option>
+                            <option>Retail</option>
+                            <option>Korean Restaurant</option>
+                            <option>Cafe</option>
+                            <option>Printing Services</option>
+                            <option>IT Services</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results-card">
+                <div class="card-header-row mb-16">
+                    <div class="results-title-block">
+                        <h2 class="section-title text-blue">
+                            <i class="fa-solid fa-list-check"></i> SEARCH RESULTS
+                        </h2>
+                        <span class="records-found-badge">15 record(s) found</span>
+                    </div>
+                    <div class="sort-by-wrapper">
+                        <label>Sort by:</label>
+                        <select class="select-sort">
+                            <option>Date Created (Newest First)</option>
+                            <option>Date Created (Oldest First)</option>
+                            <option>Business Name (A-Z)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-scroll-wrapper">
+                    <table class="records-data-table">
+                        <thead>
+                            <tr>
+                                <th>DATE CREATED</th>
+                                <th>RECORD TYPE</th>
+                                <th>BUSINESS NAME/PERMIT NO.</th>
+                                <th>OWNER NAME</th>
+                                <th>BUSINESS TYPE</th>
+                                <th>STATUS</th>
+                                <th class="text-center">ACTIONS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="date-cell">April 30, 2026</div>
+                                    <div class="time-cell">03:15 PM</div>
+                                </td>
+                                <td><span class="badge badge-reg">Business Registration</span></td>
+                                <td>
+                                    <div class="entity-name">ABC Merchandise</div>
+                                    <div class="entity-id">BP-2026-00127</div>
+                                </td>
+                                <td>Juan Dela Cruz</td>
+                                <td>Retail</td>
+                                <td><span class="status-pill status-approved">Approved</span></td>
+                                <td class="action-cell-buttons">
+                                    <button class="action-icon-btn" title="View"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="action-icon-btn" title="Download"><i class="fa-solid fa-download"></i></button>
+                                    <button class="action-icon-btn" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="date-cell">April 30, 2026</div>
+                                    <div class="time-cell">01:29 PM</div>
+                                </td>
+                                <td><span class="badge badge-reg">Business Registration</span></td>
+                                <td>
+                                    <div class="entity-name">Samgyeopsalamat</div>
+                                    <div class="entity-id">BP-2026-00118</div>
+                                </td>
+                                <td>Kim Lee</td>
+                                <td>Korean Restaurant</td>
+                                <td><span class="status-pill status-approved">Approved</span></td>
+                                <td class="action-cell-buttons">
+                                    <button class="action-icon-btn" title="View"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="action-icon-btn" title="Download"><i class="fa-solid fa-download"></i></button>
+                                    <button class="action-icon-btn" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="date-cell">April 29, 2026</div>
+                                    <div class="time-cell">09:52 AM</div>
+                                </td>
+                                <td><span class="badge badge-permit">Business Permit</span></td>
+                                <td>
+                                    <div class="entity-name">Cafe Atreza</div>
+                                    <div class="entity-id">BP-2026-00126</div>
+                                </td>
+                                <td>Maria Santos</td>
+                                <td>Cafe</td>
+                                <td><span class="status-pill status-pending">Pending</span></td>
+                                <td class="action-cell-buttons">
+                                    <button class="action-icon-btn" title="View"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="action-icon-btn" title="Download"><i class="fa-solid fa-download"></i></button>
+                                    <button class="action-icon-btn" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="date-cell">April 27, 2026</div>
+                                    <div class="time-cell">02:37 PM</div>
+                                </td>
+                                <td><span class="badge badge-reg">Business Registration</span></td>
+                                <td>
+                                    <div class="entity-name">Tarpaulin Printing</div>
+                                    <div class="entity-id">BP-2026-00119</div>
+                                </td>
+                                <td>Carlo Bautista</td>
+                                <td>Printing Services</td>
+                                <td><span class="status-pill status-approved">Approved</span></td>
+                                <td class="action-cell-buttons">
+                                    <button class="action-icon-btn" title="View"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="action-icon-btn" title="Download"><i class="fa-solid fa-download"></i></button>
+                                    <button class="action-icon-btn" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="date-cell">April 24, 2026</div>
+                                    <div class="time-cell">04:22 PM</div>
+                                </td>
+                                <td><span class="badge badge-permit">Business Permit</span></td>
+                                <td>
+                                    <div class="entity-name">Crossfire Print Shop</div>
+                                    <div class="entity-id">BP-2026-00123</div>
+                                </td>
+                                <td>Mark Reyes</td>
+                                <td>Printing Services</td>
+                                <td><span class="status-pill status-expired">Expired</span></td>
+                                <td class="action-cell-buttons">
+                                    <button class="action-icon-btn" title="View"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="action-icon-btn" title="Download"><i class="fa-solid fa-download"></i></button>
+                                    <button class="action-icon-btn" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="date-cell">April 24, 2026</div>
+                                    <div class="time-cell">08:10 AM</div>
+                                </td>
+                                <td><span class="badge badge-reg">Business Registration</span></td>
+                                <td>
+                                    <div class="entity-name">Bright Solutions Inc.</div>
+                                    <div class="entity-id">BP-2026-00121</div>
+                                </td>
+                                <td>Angela Cruz</td>
+                                <td>IT Services</td>
+                                <td><span class="status-pill status-pending">Pending</span></td>
+                                <td class="action-cell-buttons">
+                                    <button class="action-icon-btn" title="View"><i class="fa-regular fa-eye"></i></button>
+                                    <button class="action-icon-btn" title="Download"><i class="fa-solid fa-download"></i></button>
+                                    <button class="action-icon-btn" title="More Options"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-pagination-footer">
+                    <span class="showing-entries-label">Showing 1 to 6 of 15 records</span>
+                    <div class="pagination-pages-group">
+                        <button class="p-arrow-btn" disabled><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="p-num-btn active">1</button>
+                        <button class="p-num-btn">2</button>
+                        <button class="p-num-btn">3</button>
+                        <button class="p-num-btn">4</button>
+                        <button class="p-num-btn">5</button>
+                        <button class="p-arrow-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>

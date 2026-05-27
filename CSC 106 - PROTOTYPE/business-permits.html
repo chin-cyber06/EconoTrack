@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - Business Permits</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="business-permits-style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="butuan-logo.png" alt="Butuan Logo" class="brand-logo">
+            <div class="brand-text">
+                <h2>ECONOTRACK</h2>
+                <p>Business Permit Registration System</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-house"></i> <span>Dashboard</span>
+            </a>
+            <a href="business-registration.html" class="menu-item">
+                <i class="fa-solid fa-user-plus"></i> <span>Business Registration</span>
+            </a>
+            <a href="business-permits.html" class="menu-item active">
+                <i class="fa-solid fa-file-invoice"></i> <span>Business Permits</span>
+            </a>
+            <a href="permit-renewal.html" class="menu-item">
+                <i class="fa-solid fa-arrows-rotate"></i> <span>Permit Renewal</span>
+            </a>
+             <a href="search-records.html" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Search Records</span>
+            </a>
+            <a href="reports.html" class="menu-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Reports</span>
+            </a>
+            <a href="user-management.html" class="menu-item">
+                <i class="fa-solid fa-users"></i> <span>Users Management</span>
+            </a>
+            <a href="backup-recovery.html" class="menu-item">
+                <i class="fa-solid fa-database"></i> <span>Backup & Recovery</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i> <span>Settings</span>
+            </a>
+            <a href="help-support.html" class="menu-item">
+                <i class="fa-solid fa-circle-question"></i> <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="top-navbar">
+            <div class="nav-left">
+                <button class="toggle-sidebar-btn"><i class="fa-solid fa-bars"></i></button>
+            </div>
+            <div class="nav-right">
+                <div class="nav-icon-btn">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-badge"></span>
+                </div>
+                <div class="user-profile">
+                    <img src="claire-profile.png" alt="User Avatar" class="profile-img">
+                    <div class="profile-info">
+                        <span class="user-name">Christine M...</span>
+                        <span class="user-role">LGU Staff</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-container">
+            
+            <div class="module-header-row">
+                <div class="title-section">
+                    <h1><i class="fa-solid fa-file-invoice header-icon"></i> Business Permits</h1>
+                    <p class="breadcrumbs">Dashboard > Business Permits</p>
+                </div>
+
+                <a href="new-permit.html" class="btn-primary-action" style="text-decoration: none;">
+                    <i class="fa-solid fa-plus"></i> New Permit Application
+                </a>
+            </div>
+
+            <div class="data-management-card">
+                
+                <div class="filter-tabs-row">
+                    <button class="tab-btn active">All Permits</button>
+                    <button class="tab-btn">For Approval <span class="badge-count">(67)</span></button>
+                    <button class="tab-btn">Approved</button>
+                    <button class="tab-btn">Expired</button>
+                    <button class="tab-btn">Renewed</button>
+                </div>
+
+                <div class="utility-controls-row">
+                    <div class="search-input-wrapper">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                        <input type="text" placeholder="Search" class="search-field">
+                    </div>
+                    <button class="btn-secondary-filter">
+                        <i class="fa-solid fa-sliders"></i> Filters
+                    </button>
+                </div>
+
+                <div class="table-scroll-wrapper">
+                    <table class="permits-registry-table">
+                        <thead>
+                            <tr>
+                                <th>Permit No.</th>
+                                <th>Business Name</th>
+                                <th>Permit Type</th>
+                                <th>Date Issued</th>
+                                <th>Expiry Date</th>
+                                <th>Status</th>
+                                <th class="text-center">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-semibold">BP-2026-00127</td>
+                                <td>ABC Merchandise</td>
+                                <td>Mayor's Permit</td>
+                                <td>April 30, 2026</td>
+                                <td>Dec 31, 2026</td>
+                                <td><span class="status-badge approved">Approved</span></td>
+                                <td>
+                                    <div class="action-btn-cluster">
+                                        <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">BP-2026-00126</td>
+                                <td>Cafe Atreza</td>
+                                <td>Business Permit</td>
+                                <td>April 30, 2026</td>
+                                <td>Dec 31, 2026</td>
+                                <td><span class="status-badge approved">Approved</span></td>
+                                <td>
+                                    <div class="action-btn-cluster">
+                                        <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">BP-2026-00125</td>
+                                <td>Green Builders Corp.</td>
+                                <td>Mayor's Permit</td>
+                                <td>April 29, 2026</td>
+                                <td>Dec 31, 2026</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>
+                                    <div class="action-btn-cluster">
+                                        <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">BP-2026-00124</td>
+                                <td>Dela Rosa Hardware</td>
+                                <td>Business Permit</td>
+                                <td>April 27, 2026</td>
+                                <td>Dec 31, 2026</td>
+                                <td><span class="status-badge approved">Approved</span></td>
+                                <td>
+                                    <div class="action-btn-cluster">
+                                        <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">BP-2026-00123</td>
+                                <td>Crossfire Print Shop</td>
+                                <td>Sanitary Permit</td>
+                                <td>April 27, 2026</td>
+                                <td>Dec 31, 2026</td>
+                                <td><span class="status-badge approved">Approved</span></td>
+                                <td>
+                                    <div class="action-btn-cluster">
+                                        <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">BP-2026-00122</td>
+                                <td>JM Motorcycle Parts</td>
+                                <td>Business Permit</td>
+                                <td>April 24, 2026</td>
+                                <td>Dec 31, 2026</td>
+                                <td><span class="status-badge expired">Expired</span></td>
+                                <td>
+                                    <div class="action-btn-cluster">
+                                        <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">BP-2026-00121</td>
+                                <td>Bright Solutions Inc.</td>
+                                <td>Mayor's Permit</td>
+                                <td>April 24, 2026</td>
+                                <td>Dec 31, 2026</td>
+                                <td><span class="status-badge pending">Pending</span></td>
+                                <td>
+                                    <div class="action-btn-cluster">
+                                        <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">BP-2026-00120</td>
+                                <td>Butuan Fresh Market</td>
+                                <td>Sanitary Permit</td>
+                                <td>April 24, 2026</td>
+                                <td>Dec 31, 2026</td>
+                                <td><span class="status-badge expired">Expired</span></td>
+                                <td>
+                                    <div class="action-btn-cluster">
+                                        <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">BP-2026-00119</td>
+                                <td>Tarpaulin Printing</td>
+                                <td>Business Permit</td>
+                                <td>April 23, 2026</td>
+                                <td>Dec 31, 2026</td>
+                                <td><span class="status-badge approved">Approved</span></td>
+                                <td>
+                                    <div class="action-btn-cluster">
+                                        <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">BP-2026-00118</td>
+                                <td>Samgyeopsalamat</td>
+                                <td>Business Permit</td>
+                                <td>April 22, 2026</td>
+                                <td>Dec 31, 2026</td>
+                                <td><span class="status-badge approved">Approved</span></td>
+                                <td>
+                                    <div class="action-btn-cluster">
+                                        <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-semibold">BP-2026-00117</td>
+                                <td>Coffee Project Butuan</td>
+                                <td>Business Permit</td>
+                                <td>April 21, 2026</td>
+                                <td>Dec 31, 2028</td>
+                                <td><span class="status-badge approved">Approved</span></td>
+                                <td>
+                                    <div class="action-btn-cluster">
+                                        <button class="action-icon-btn"><i class="fa-regular fa-eye"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-download"></i></button>
+                                        <button class="action-icon-btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-pagination-footer">
+                    <span class="pagination-counter-label">Showing 1 to 11 of 67 entries</span>
+                    <div class="pagination-action-cluster-row">
+                        <button class="pagination-arrow-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="pagination-num-btn active">1</button>
+                        <button class="pagination-num-btn">2</button>
+                        <button class="pagination-num-btn">3</button>
+                        <button class="pagination-num-btn">4</button>
+                        <button class="pagination-num-btn">5</button>
+                        <button class="pagination-arrow-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

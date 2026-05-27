@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - New Permit Application (Step 2)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="business-details-style.css">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo-mock">
+                <img src="butuan-logo.png" alt="Butuan Logo" class="brand-logo">
+            </div>
+            <div class="brand-text">
+                <h2>ECONOTRACK</h2>
+                <p>Business Permit & Registration System</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-house"></i> <span>Dashboard</span>
+            </a>
+            <a href="business-registration.html" class="menu-item">
+                <i class="fa-solid fa-user-plus"></i> <span>Business Registration</span>
+            </a>
+            <a href="business-permits.html" class="menu-item active">
+                <i class="fa-solid fa-file-invoice"></i> <span>Business Permits</span>
+            </a>
+            <a href="permit-renewal.html" class="menu-item">
+                <i class="fa-solid fa-arrows-rotate"></i> <span>Permit Renewal</span>
+            </a>
+             <a href="search-records.html" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Search Records</span>
+            </a>
+            <a href="reports.html" class="menu-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Reports</span>
+            </a>
+            <a href="user-management.html" class="menu-item">
+                <i class="fa-solid fa-users"></i> <span>Users Management</span>
+            </a>
+            <a href="backup-recovery.html" class="menu-item">
+                <i class="fa-solid fa-database"></i> <span>Backup & Recovery</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i> <span>Settings</span>
+            </a>
+            <a href="help-support.html" class="menu-item">
+                <i class="fa-solid fa-circle-question"></i> <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-navbar">
+            <button class="toggle-sidebar"><i class="fa-solid fa-bars"></i></button>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell notification-bell"></i>
+                <img src="claire-profile.png" alt="User Avatar" class="profile-img">
+                <div class="profile-info">
+                    <span class="user-name">Christine M...</span>
+                    <span class="user-role">LGU Staff</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-container">
+            <div class="module-header-row">
+                <div class="title-block">
+                    <h1><i class="fa-solid fa-file-invoice header-icon"></i> Business Permits</h1>
+                    <p class="breadcrumbs">Dashboard > Business Permits > New Permit Application</p>
+                </div>
+            </div>
+
+            <div class="data-management-card wizard-card">
+                <div class="wizard-progress-tracker">
+                    <div class="step-item completed">
+                        <span class="step-num"><i class="fa-solid fa-check"></i></span>
+                        <span class="step-label">Permit Information</span>
+                    </div>
+                    <div class="step-item active">
+                        <span class="step-num">2</span>
+                        <span class="step-label">Business Details</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">3</span>
+                        <span class="step-label">Requirements</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">4</span>
+                        <span class="step-label">Review & Submit</span>
+                    </div>
+                </div>
+
+                <div class="info-alert-banner">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div class="alert-text">
+                        <h3>Step 2 of 4: Business Details</h3>
+                        <p>Provide the basic details of your permit application. Fields marked with <span class="required-star">*</span> are required.</p>
+                    </div>
+                </div>
+
+                <form class="permit-application-form" action="business-requirements.html" method="GET">
+                    <h3 class="form-section-heading">Business Information</h3>
+                    <div class="form-grid-row three-cols">
+                        <div class="form-field-group">
+                            <label>Business Name <span class="required-star">*</span></label>
+                            <input type="text" placeholder="Enter business name" required>
+                        </div>
+                        <div class="form-field-group">
+                            <label>Business Trade Name (DBA)</label>
+                            <input type="text" placeholder="Enter business trade name">
+                        </div>
+                        <div class="form-field-group">
+                            <label>Business Registration No. <span class="required-star">*</span></label>
+                            <input type="text" placeholder="BRS-2024-00012345" required>
+                        </div>
+                    </div>
+
+                    <div class="form-grid-row three-cols">
+                        <div class="form-field-group">
+                            <label>Nature of Business <span class="required-star">*</span></label>
+                            <select required>
+                                <option value="" disabled selected>Select nature of business</option>
+                                <option value="Retailing">Retailing</option>
+                                <option value="Wholesaling">Wholesaling</option>
+                                <option value="Services">Services</option>
+                                <option value="Manufacturing">Manufacturing</option>
+                            </select>
+                        </div>
+                        <div class="form-field-group">
+                            <label>Business Category <span class="required-star">*</span></label>
+                            <select required>
+                                <option value="" disabled selected>Select business category</option>
+                                <option value="Single Proprietorship">Single Proprietorship</option>
+                                <option value="Partnership">Partnership</option>
+                                <option value="Corporation">Corporation</option>
+                                <option value="Cooperative">Cooperative</option>
+                            </select>
+                        </div>
+                        <div class="form-field-group">
+                            <label>Registration Date <span class="required-star">*</span></label>
+                            <div class="date-input-wrapper">
+                                <input type="date" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3 class="form-section-heading">Business Address</h3>
+                    <div class="form-grid-row three-cols">
+                        <div class="form-field-group">
+                            <label>House/Block No./Lot No. <span class="required-star">*</span></label>
+                            <input type="text" placeholder="Enter House/Block No./Lot No." required>
+                        </div>
+                        <div class="form-field-group">
+                            <label>Street <span class="required-star">*</span></label>
+                            <input type="text" placeholder="Enter Street" required>
+                        </div>
+                        <div class="form-field-group">
+                            <label>Province <span class="required-star">*</span></label>
+                            <select required>
+                                <option value="" disabled selected>Select Province</option>
+                                <option value="Agusan del Norte">Agusan del Norte</option>
+                                <option value="Agusan del Sur">Agusan del Sur</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-grid-row three-cols">
+                        <div class="form-field-group">
+                            <label>Building Name (if applicable) <span class="required-star">*</span></label>
+                            <input type="text" placeholder="Enter Building Name" required>
+                        </div>
+                        <div class="form-field-group">
+                            <label>Barangay <span class="required-star">*</span></label>
+                            <select required>
+                                <option value="" disabled selected>Select Barangay</option>
+                                <option value="Bading">Bading</option>
+                                <option value="Doongan">Doongan</option>
+                                <option value="Libertad">Libertad</option>
+                            </select>
+                        </div>
+                        <div class="form-field-group">
+                            <label>ZIP Code <span class="required-star">*</span></label>
+                            <input type="text" placeholder="Enter ZIP Code" required>
+                        </div>
+                    </div>
+
+                    <div class="form-grid-row three-cols">
+                        <div class="form-field-group">
+                            <label>Floor / Unit Number (if applicable) <span class="required-star">*</span></label>
+                            <input type="text" placeholder="Enter Floor / Unit Number" required>
+                        </div>
+                        <div class="form-field-group">
+                            <label>City/Municipality <span class="required-star">*</span></label>
+                            <select required>
+                                <option value="" disabled selected>Select City/Municipality</option>
+                                <option value="Butuan City">Butuan City</option>
+                            </select>
+                        </div>
+                        <div class="empty-col"></div>
+                    </div>
+
+                    <div class="wizard-actions-row">
+                        <span class="required-notice-footer"><span class="required-star">*</span> Required fields</span>
+                        <div class="action-btn-group">
+                            <button type="button" class="btn-cancel-action" onclick="window.location.href='new-permit.html'">Previous</button>
+                            <button type="submit" class="btn-primary-action" onclick="window.location.href='business-requirements.html'">Next</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

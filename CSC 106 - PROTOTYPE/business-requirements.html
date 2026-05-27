@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - New Permit Application (Step 3)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="business-requirements-style.css">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo-mock">
+                <img src="butuan-logo.png" alt="Butuan Logo" class="brand-logo">
+            </div>
+            <div class="brand-text">
+                <h2>ECONOTRACK</h2>
+                <p>Business Permit & Registration System</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-house"></i> <span>Dashboard</span>
+            </a>
+            <a href="business-registration.html" class="menu-item">
+                <i class="fa-solid fa-user-plus"></i> <span>Business Registration</span>
+            </a>
+            <a href="business-permits.html" class="menu-item active">
+                <i class="fa-solid fa-file-invoice"></i> <span>Business Permits</span>
+            </a>
+            <a href="permit-renewal.html" class="menu-item">
+                <i class="fa-solid fa-arrows-rotate"></i> <span>Permit Renewal</span>
+            </a>
+            <a href="search-records.html" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Search Records</span>
+            </a>
+            <a href="reports.html" class="menu-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Reports</span>
+            </a>
+            <a href="user-management.html" class="menu-item">
+                <i class="fa-solid fa-users"></i> <span>Users Management</span>
+            </a>
+            <a href="backup-recovery.html" class="menu-item">
+                <i class="fa-solid fa-database"></i> <span>Backup & Recovery</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i> <span>Settings</span>
+            </a>
+            <a href="help-support.html" class="menu-item">
+                <i class="fa-solid fa-circle-question"></i> <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header class="top-navbar">
+            <button class="toggle-sidebar"><i class="fa-solid fa-bars"></i></button>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell notification-bell"></i>
+                <img src="claire-profile.png" alt="User Avatar" class="profile-img">
+                <div class="profile-info">
+                    <span class="user-name">Christine M...</span>
+                    <span class="user-role">LGU Staff</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content-container">
+            
+            <div class="module-header-row">
+                <div class="title-block">
+                    <h1><i class="fa-solid fa-file-invoice header-icon"></i> Business Permits</h1>
+                    <p class="breadcrumbs">Dashboard > Business Permits > New Permit Application</p>
+                </div>
+            </div>
+
+            <div class="data-management-card wizard-card">
+                
+                <div class="wizard-progress-tracker">
+                    <div class="step-item completed">
+                        <span class="step-num"><i class="fa-solid fa-check"></i></span>
+                        <span class="step-label">Permit Information</span>
+                    </div>
+                    <div class="step-item completed">
+                        <span class="step-num"><i class="fa-solid fa-check"></i></span>
+                        <span class="step-label">Business Details</span>
+                    </div>
+                    <div class="step-item active">
+                        <span class="step-num">3</span>
+                        <span class="step-label">Requirements</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-num">4</span>
+                        <span class="step-label">Review & Submit</span>
+                    </div>
+                </div>
+
+                <div class="info-alert-banner">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div class="alert-text">
+                        <h3>Step 3 of 4: Requirements</h3>
+                        <p>Provide the basic details of your permit application. Fields marked with <span class="required-star">*</span> are required.</p>
+                    </div>
+                </div>
+
+                <form class="permit-application-form" action="business-review.html" method="GET">
+                    
+                    <div class="requirements-grid">
+                        
+                        <div class="upload-card">
+                            <div class="card-header">
+                                <span class="doc-title">1. Barangay Clearance <span class="required-star">*</span></span>
+                            </div>
+                            <div class="card-body">
+                                <label class="file-upload-btn">
+                                    <input type="file" required>
+                                    <span>Add File</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="upload-card">
+                            <div class="card-header">
+                                <span class="doc-title">2. DTI/SEC Registration <span class="required-star">*</span></span>
+                            </div>
+                            <div class="card-body">
+                                <label class="file-upload-btn">
+                                    <input type="file" required>
+                                    <span>Add File</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="upload-card">
+                            <div class="card-header">
+                                <span class="doc-title">3. BIR Certificate <span class="required-star">*</span></span>
+                            </div>
+                            <div class="card-body">
+                                <label class="file-upload-btn">
+                                    <input type="file" required>
+                                    <span>Add File</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="upload-card">
+                            <div class="card-header">
+                                <span class="doc-title">4. Lease contract <span class="required-star">*</span></span>
+                            </div>
+                            <div class="card-body">
+                                <label class="file-upload-btn">
+                                    <input type="file" required>
+                                    <span>Add File</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="upload-card">
+                            <div class="card-header">
+                                <span class="doc-title">5. Occupancy Permit <span class="required-star">*</span></span>
+                            </div>
+                            <div class="card-body">
+                                <label class="file-upload-btn">
+                                    <input type="file" required>
+                                    <span>Add File</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="upload-card">
+                            <div class="card-header">
+                                <span class="doc-title">6. Fire Safety Inspection Certificate <span class="required-star">*</span></span>
+                            </div>
+                            <div class="card-body">
+                                <label class="file-upload-btn">
+                                    <input type="file" required>
+                                    <span>Add File</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="upload-card">
+                            <div class="card-header">
+                                <span class="doc-title">7. Sanitary Permit <span class="required-star">*</span></span>
+                            </div>
+                            <div class="card-body">
+                                <label class="file-upload-btn">
+                                    <input type="file" required>
+                                    <span>Add File</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="upload-card">
+                            <div class="card-header">
+                                <span class="doc-title">8. Cedula <span class="required-star">*</span></span>
+                            </div>
+                            <div class="card-body">
+                                <label class="file-upload-btn">
+                                    <input type="file" required>
+                                    <span>Add File</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="upload-card">
+                            <div class="card-header">
+                                <span class="doc-title">9. Valid IDs <span class="required-star">*</span></span>
+                            </div>
+                            <div class="card-body">
+                                <label class="file-upload-btn">
+                                    <input type="file" required>
+                                    <span>Add File</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="wizard-actions-row">
+                        <span class="required-notice-footer"><span class="required-star">*</span> Required documents</span>
+                        <div class="action-btn-group">
+                            <button type="button" class="btn-cancel-action" onclick="window.location.href='business-details.html'">Previous</button>
+                            <button type="submit" class="btn-primary-action" onclick="window.location.href='business-review.html'">Next</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="system-compliance-note">
+                <i class="fa-solid fa-circle-info"></i>
+                <div class="note-content">
+                    <strong>Note</strong>
+                    <p>All information entered will be used for business registration and permit processing.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

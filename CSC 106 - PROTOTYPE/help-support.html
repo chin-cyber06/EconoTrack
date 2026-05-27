@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EconoTrack - Help & Support</title>
+    <link rel="stylesheet" href="support-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard-style.css">
+    <link rel="stylesheet" href="form-style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <div class="brand-logo-mock">
+                <img src="butuan-logo.png" alt="Butuan Logo" class="brand-logo">
+            </div>
+            <div class="brand-text">
+                <h2>ECONOTRACK</h2>
+                <p>Business Permit & Registration System</p>
+            </div>
+        </div>
+
+        <nav class="sidebar-menu">
+            <a href="dashboard.html" class="menu-item">
+                <i class="fa-solid fa-house"></i> <span>Dashboard</span>
+            </a>
+            <a href="business-registration.html" class="menu-item">
+                <i class="fa-solid fa-user-plus"></i> <span>Business Registration</span>
+            </a>
+           <a href="business-permits.html" class="menu-item">
+                <i class="fa-solid fa-file-invoice"></i> <span>Business Permits</span>
+            </a>
+            <a href="permit-renewal.html" class="menu-item">
+                <i class="fa-solid fa-arrows-rotate"></i> <span>Permit Renewal</span>
+            </a>
+             <a href="search-records.html" class="menu-item">
+                <i class="fa-solid fa-magnifying-glass"></i> <span>Search Records</span>
+            </a>
+            <a href="reports.html" class="menu-item">
+                <i class="fa-solid fa-chart-simple"></i> <span>Reports</span>
+            </a>
+            <a href="user-management.html" class="menu-item">
+                <i class="fa-solid fa-users"></i> <span>Users Management</span>
+            </a>
+            <a href="backup-recovery.html" class="menu-item">
+                <i class="fa-solid fa-cloud-arrow-up"></i> <span>Backup & Recovery</span>
+            </a>
+            <a href="settings.html" class="menu-item">
+                <i class="fa-solid fa-gear"></i> <span>Settings</span>
+            </a>
+            <a href="help-support.html" class="menu-item active">
+                <i class="fa-solid fa-circle-question"></i> <span>Help & Support</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <a href="#" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <div class="dashboard-layout">
+
+        <header class="top-navbar">
+            <button class="toggle-sidebar"><i class="fa-solid fa-bars"></i></button>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell notification-bell"></i>
+                <img src="andrea-profile.png" alt="User Avatar" class="profile-img">
+                <div class="profile-info">
+                    <span class="user-name">Andrea Marx...</span>
+                    <span class="user-role">Admin</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="support-container">
+            
+            <header class="support-header">
+                <div class="header-icon-circle">
+                    <i class="fa-solid fa-circle-question"></i>
+                </div>
+                <div class="header-text">
+                    <h1>Help & Support</h1>
+                    <p>We're here to help you. Find answers and get support.</p>
+                </div>
+            </header>
+
+            <div class="support-tabs">
+                <button class="tab-btn active">
+                    <i class="fa-solid fa-comments"></i> FAQs
+                </button>
+            </div>
+
+            <div class="support-grid">
+                
+                <section class="support-card faq-section">
+                    <h2>Frequently Asked Questions</h2>
+                    <div class="accordion-list">
+                        
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                <span>How do I register a new business?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                <span>How do I add a new business permit?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                <span>How do I search for business records?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                <span>How do I generate reports?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                <span>What do the status labels mean?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-trigger">
+                                <span>I forgot my password. What should I do?</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="support-card contact-section">
+                    <h2>Need More Help?</h2>
+                    <p class="contact-subtext">Can't find the answer you're looking for? Our support team is ready to assist you.</p>
+                    
+                    <div class="contact-channels">
+                        
+                        <div class="channel-row">
+                            <div class="channel-icon-box">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+                            <div class="channel-details">
+                                <h3>Email Support</h3>
+                                <p>support@butuancity.gov.ph</p>
+                            </div>
+                            <div class="channel-arrow">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="channel-row">
+                            <div class="channel-icon-box">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="channel-details">
+                                <h3>Call Us</h3>
+                                <p>(085) 225-8171</p>
+                            </div>
+                            <div class="channel-arrow">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </div>
+
+                        <div class="channel-row no-pointer">
+                            <div class="channel-icon-box">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div class="channel-details">
+                                <h3>Office Hours</h3>
+                                <p>Mon-Fri: 8:00 AM - 5:00 PM</p>
+                            </div>
+                            <div class="channel-arrow invisible">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="ticket-action-box">
+                        <button class="btn-ticket-submit">Create Support Ticket</button>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
