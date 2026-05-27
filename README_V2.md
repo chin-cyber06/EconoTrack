@@ -7,29 +7,12 @@ This repository contains the project documentation, team style guide, and design
 
 ---
 
-## 👥 Group 5 Team Members
+## Group 5 Team Members
 - **Bacalso, Wendee Mae** 
 - **Cafe, Princess Shayna** 
 - **Cagadas, Ermi Shayne** 
 - **Cago, Andrea Marx** 
 - **Montero, Christine Claire** 
-
----
-
-## System Core Features
-The current high-fidelity prototype includes the following features:
-
-- **LGU Administrative Dashboard**  
-  Displays business statistics such as total registered businesses, pending applications, approved permits, and renewal records.
-
-- **Status Classification Indicators**  
-  Uses color-coded labels for easier tracking of application status:
-  - 🟡 Pending — Applications under review
-  - 🟢 Approved — Verified and approved permits
-  - 🔴 Denied — Applications with incomplete requirements or issues
-
-- **Navigation Sidebar**  
-  Provides quick access to dashboard metrics, records, tables, and account settings.
 
 ---
 
@@ -45,4 +28,36 @@ Since the project is currently in the prototyping stage, there is no source code
 
 4. Use the sidebar navigation to explore the different pages and dashboard components.
 
- academic purposes under **CSC 106 – Software Engineering**.
+
+## How to Open and Run the Project
+
+To run the EconoTrack System locally on your computer, follow these steps:
+
+1. Download or clone this repository to your device.
+
+2. Extract the ZIP file if the project was downloaded as a compressed folder.
+
+3. Open the extracted project folder using Visual Studio Code.
+
+4. Inside the project folder, locate the main HTML file:
+   - `index.html`
+
+5. Right-click the `index.html` file and select:
+   - **Open with Live Server**  
+   (Make sure the Live Server extension is installed in Visual Studio Code.)
+
+6. The system will automatically open in your default web browser.
+
+7. Use the navigation sidebar and dashboard pages to explore the EconoTrack system features.
+
+## System Requirements
+
+- Visual Studio Code
+- Live Server Extension
+- Modern Web Browser (Google Chrome, Microsoft Edge, or Firefox)
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
